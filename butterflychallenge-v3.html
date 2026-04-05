@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Butterfly Challenge — Show Up for Mental Health</title>
+<meta name="description" content="Show up for mental health. For someone you care about. Take the Challenge. Show the Love. Lift 3 More. A global movement. A signal for humanity.">
+<link rel="icon" type="image/png" href="one_humanity_foundation_logo-Photoroom.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════
+   TOKENS — Apple Light System
+═══════════════════════════════════════ */
+:root{
+  --teal:#0B9E99;--teal-d:#087975;--teal-l:rgba(11,158,153,.1);--teal-ll:rgba(11,158,153,.06);
+  --gold:#A07218;--gold-l:rgba(160,114,24,.12);--gold-ll:rgba(160,114,24,.07);
+  --red:#C0392B;--red-l:rgba(192,57,43,.1);
+  --ink:#111111;--ink-75:rgba(17,17,17,.75);--ink-50:rgba(17,17,17,.5);--ink-30:rgba(17,17,17,.3);--ink-10:rgba(17,17,17,.08);--ink-06:rgba(17,17,17,.05);
+  --white:#FFFFFF;--paper:#FAFAF8;--warm:#F4F2EE;--mist:#ECEAE5;--border:#E5E3DF;
+  --night:#0A0E0E;--night2:#0D1515;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --nav:64px;--r:6px;
+  --ease:cubic-bezier(.22,.68,0,1.2);
+  --ease-out:cubic-bezier(0,0,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;line-height:1.6}
+
+/* ═══════════════════════════════════════
+   SKIP + ACCESSIBILITY
+═══════════════════════════════════════ */
+.skip{position:absolute;top:-80px;left:16px;z-index:9999;background:var(--teal);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:var(--r);text-decoration:none;transition:top .2s}
+.skip:focus{top:16px}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:600;height:var(--nav);background:rgba(250,250,248,.92);backdrop-filter:blur(24px) saturate(1.8);border-bottom:1px solid var(--border);transition:border-color .3s,background .3s}
+.nav-inner{max-width:1320px;margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo-a{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-mark{width:30px;height:30px}
+.logo-name{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--ink);letter-spacing:.01em;line-height:1}
+.logo-tag{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);display:block;margin-top:2px}
+nav ul{display:flex;gap:24px;list-style:none}
+nav ul a{font-size:13px;font-weight:400;color:var(--ink-50);text-decoration:none;letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+nav ul a:hover{color:var(--ink)}
+.nav-actions{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.btn-nav-red{font-size:12px;font-weight:500;color:var(--red);background:var(--red-l);border:1px solid rgba(192,57,43,.2);padding:7px 14px;border-radius:var(--r);text-decoration:none;transition:all .2s;white-space:nowrap}
+.btn-nav-red:hover{background:var(--red);color:#fff}
+.btn-nav-teal{font-size:12px;font-weight:600;color:#fff;background:var(--teal);border:1px solid var(--teal);padding:8px 18px;border-radius:var(--r);text-decoration:none;transition:all .2s;white-space:nowrap}
+.btn-nav-teal:hover{background:var(--teal-d)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink-50);transition:all .3s}
+.drawer{display:none;position:fixed;top:var(--nav);left:0;right:0;bottom:0;background:var(--paper);z-index:590;flex-direction:column;padding:28px 24px;overflow-y:auto;border-top:1px solid var(--border)}
+.drawer.open{display:flex}
+.drawer a{font-size:17px;font-weight:400;color:var(--ink);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--ink-06)}
+.drawer a:hover{color:var(--teal)}
+.drawer-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+
+/* ═══════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════ */
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.wrap-md{max-width:980px;margin:0 auto;padding:0 40px}
+.wrap-sm{max-width:740px;margin:0 auto;padding:0 40px}
+
+/* ═══════════════════════════════════════
+   SPA — Pages
+═══════════════════════════════════════ */
+.page{display:none;min-height:100vh;padding-top:var(--nav)}
+.page.active{display:block}
+
+/* ═══════════════════════════════════════
+   TYPOGRAPHY ATOMS
+═══════════════════════════════════════ */
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--teal);flex-shrink:0}
+.eyebrow-gold{color:var(--gold)}
+.eyebrow-gold::before{background:var(--gold)}
+.eyebrow-center{justify-content:center}
+.eyebrow-center::before{display:none}
+.h-display{font-family:var(--serif);font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.02;letter-spacing:-.03em;color:var(--ink)}
+.h-display em{font-style:italic;color:var(--teal)}
+.h-xl{font-family:var(--serif);font-size:clamp(38px,5vw,68px);font-weight:300;line-height:1.06;letter-spacing:-.025em}
+.h-xl em{font-style:italic;color:var(--teal)}
+.h-lg{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;line-height:1.1;letter-spacing:-.02em}
+.h-lg em{font-style:italic;color:var(--teal)}
+.h-md{font-family:var(--serif);font-size:clamp(22px,2.5vw,34px);font-weight:300;line-height:1.15;letter-spacing:-.015em}
+.h-md em{font-style:italic;color:var(--teal)}
+.body-lg{font-size:17px;font-weight:300;line-height:1.8;color:var(--ink-75)}
+.body-md{font-size:15px;font-weight:300;line-height:1.75;color:var(--ink-75)}
+.body-sm{font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-50)}
+.quote{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.5;color:var(--ink-75);padding-left:20px;border-left:2px solid var(--teal)}
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:600;color:#fff;background:var(--teal);border:1.5px solid var(--teal);padding:13px 28px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .25s var(--ease);cursor:pointer}
+.btn-primary:hover{background:var(--teal-d);border-color:var(--teal-d);transform:translateY(-2px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);background:none;border:1.5px solid var(--ink-30);padding:12px 26px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .25s ease;cursor:pointer}
+.btn-secondary:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+.btn-ghost-teal{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--teal);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:gap .2s}
+.btn-ghost-teal:hover{gap:10px}
+.btn-red{display:inline-flex;align-items:center;font-family:var(--sans);font-size:13px;font-weight:600;color:#fff;background:var(--red);border:1.5px solid var(--red);padding:13px 28px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;cursor:pointer}
+.btn-red:hover{background:#a93226}
+.btn-gold{display:inline-flex;align-items:center;font-family:var(--sans);font-size:13px;font-weight:600;color:#fff;background:var(--gold);border:1.5px solid var(--gold);padding:13px 28px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .2s}
+.btn-gold:hover{background:#8a6015}
+
+/* ═══════════════════════════════════════
+   REVEAL
+═══════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* ═══════════════════════════════════════
+   DIVIDERS
+═══════════════════════════════════════ */
+.rule{height:1px;background:var(--border)}
+.rule-teal{height:1px;background:rgba(11,158,153,.2)}
+
+/* ═══════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════ */
+.sec-light{background:var(--paper);padding:120px 0}
+.sec-warm{background:var(--warm);padding:120px 0}
+.sec-mist{background:var(--mist);padding:120px 0}
+.sec-dark{background:var(--night);padding:120px 0}
+.sec-dark2{background:var(--night2);padding:120px 0}
+.sec-teal-band{background:var(--teal);padding:80px 0}
+
+/* ═══════════════════════════════════════
+   GRID HELPERS
+═══════════════════════════════════════ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.two-col-c{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero{min-height:100vh;background:var(--paper);display:flex;align-items:flex-start;position:relative;overflow:hidden;padding:var(--nav) 0 0}
+.hero-bg-circle{position:absolute;top:-200px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(11,158,153,.07) 0%,transparent 65%);border-radius:50%;pointer-events:none;animation:breathe 12s ease-in-out infinite}
+.hero-bg-circle2{position:absolute;bottom:-300px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(160,114,24,.05) 0%,transparent 65%);border-radius:50%;pointer-events:none;animation:breathe 15s ease-in-out infinite reverse}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.08) translate(10px,-10px)}}
+.hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center;min-height:calc(100vh - var(--nav));max-width:1320px;margin:0 auto;padding:48px 40px 32px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-ll);border:1px solid rgba(11,158,153,.2);padding:7px 14px;border-radius:40px;margin-bottom:24px}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2.5s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.5)}}
+.hero-badge-txt{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.hero-h1{font-family:var(--serif);font-size:clamp(52px,6.5vw,92px);font-weight:300;line-height:1.02;letter-spacing:-.035em;color:var(--ink);margin-bottom:8px}
+.hero-h1 em{font-style:italic;color:var(--teal)}
+.hero-subh{font-family:var(--serif);font-size:clamp(20px,2.5vw,32px);font-weight:300;font-style:italic;color:var(--ink-50);margin-bottom:32px;line-height:1.3}
+.hero-truth{border-left:2px solid rgba(11,158,153,.3);padding-left:20px;margin-bottom:22px}
+.hero-truth p{font-size:15px;font-weight:300;line-height:1.8;color:var(--ink-75)}
+.hero-truth p+p{margin-top:8px}
+.hero-truth strong{color:var(--ink);font-weight:500}
+.hero-stack{margin-bottom:16px;display:flex;flex-direction:column;gap:3px}
+.hs-soul{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--teal)}
+.hs-msg{font-size:14px;font-weight:300;color:var(--ink-50);font-style:italic}
+.hs-act{font-size:13px;font-weight:500;color:var(--ink-75);letter-spacing:.02em}
+.hero-reason{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--gold);margin-bottom:36px;padding-left:20px;border-left:1px solid rgba(160,114,24,.3)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.hero-date{display:inline-flex;align-items:center;gap:8px;background:var(--gold-ll);border:1px solid rgba(160,114,24,.2);padding:7px 14px;border-radius:40px}
+.hd-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;flex-shrink:0}
+.hd-txt{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.hero-vis{display:flex;justify-content:center;align-items:center;position:relative}
+.hero-butterfly{animation:float 8s ease-in-out infinite;filter:drop-shadow(0 20px 60px rgba(11,158,153,.15))}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(11,158,153,.1)}
+.hr1{width:380px;height:380px;animation:spin 40s linear infinite}
+.hr2{width:520px;height:520px;animation:spin 65s linear infinite reverse}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* ═══════════════════════════════════════
+   STATS SECTION
+═══════════════════════════════════════ */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.stat-cell{padding:56px 40px;border-right:1px solid var(--border);position:relative}
+.stat-cell:last-child{border-right:none}
+.stat-n-wrap{display:flex;align-items:baseline;gap:0;margin-bottom:8px}
+.stat-num{font-family:var(--serif);font-size:clamp(44px,5vw,72px);font-weight:300;color:var(--teal);line-height:1;letter-spacing:-.04em}
+.stat-word{font-family:var(--serif);font-size:clamp(20px,2vw,28px);font-weight:300;color:var(--teal);line-height:1;letter-spacing:-.02em;margin-left:6px}
+.stat-label{font-size:14px;font-weight:400;color:var(--ink);margin-bottom:4px}
+.stat-src{font-size:11px;color:var(--ink-30);letter-spacing:.02em}
+.stat-caveat{font-size:10px;color:var(--ink-30);font-style:italic;margin-top:2px}
+
+/* ═══════════════════════════════════════
+   SIGN SECTION
+═══════════════════════════════════════ */
+.sign-frame{background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:60px 48px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;position:relative}
+.sign-label{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+.sign-three{display:flex;flex-direction:column;gap:8px}
+.sign-promise{font-family:var(--serif);font-size:22px;font-weight:300;font-style:italic;color:var(--ink-75);display:flex;align-items:center;gap:12px}
+.sign-promise::before{content:'';width:18px;height:1px;background:var(--teal);flex-shrink:0}
+
+/* ═══════════════════════════════════════
+   HOW IT WORKS
+═══════════════════════════════════════ */
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:20px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--border)}
+.step:first-child{border-top:1px solid var(--border)}
+.step-n{font-family:var(--serif);font-size:44px;font-weight:300;color:var(--teal);line-height:1;flex-shrink:0;width:48px;letter-spacing:-.04em}
+.step-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.step-body{font-size:13px;font-weight:300;line-height:1.65;color:var(--ink-50)}
+.private-prompt{background:var(--night);border-radius:10px;padding:44px 40px;position:relative;overflow:hidden}
+.pp-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,var(--gold-l) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.pp-lbl{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;position:relative}
+.pp-q{font-family:var(--serif);font-size:32px;font-weight:400;font-style:italic;color:#fff;line-height:1.2;margin-bottom:14px;position:relative}
+.pp-body{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.75);position:relative}
+.pp-soul{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--teal);margin-top:20px;position:relative}
+
+/* ═══════════════════════════════════════
+   TWO PATHS
+═══════════════════════════════════════ */
+.path-card{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:44px 40px;position:relative;overflow:hidden}
+.path-card-dark{background:var(--night);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:44px 40px;position:relative;overflow:hidden}
+.path-top-bar{height:3px;position:absolute;top:0;left:0;right:0;border-radius:10px 10px 0 0}
+.path-num{display:flex;flex-direction:column;gap:0;margin-bottom:28px}
+.path-step{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}
+.path-step:last-child{border-bottom:none}
+.path-step-dark{border-bottom:1px solid rgba(255,255,255,.06)}
+.path-step-dark:last-child{border-bottom:none}
+.psn{font-family:var(--serif);font-size:38px;font-weight:300;color:var(--teal);width:38px;flex-shrink:0;line-height:1}
+.psn-gold{color:var(--gold)}
+.pst{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.pst-dark{color:#fff}
+.psd{font-size:12px;font-weight:300;color:var(--ink-50)}
+.psd-dark{color:rgba(255,255,255,.72)}
+
+/* ═══════════════════════════════════════
+   CULTURE GRID (was Community)
+═══════════════════════════════════════ */
+.axiom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:56px}
+.axiom{background:var(--paper);padding:22px 18px;transition:background .2s}
+.axiom:hover{background:var(--teal-ll)}
+.ax-role{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+.ax-line{font-family:var(--serif);font-size:15px;font-weight:300;font-style:italic;color:var(--ink-75)}
+.ax-gold .ax-role{color:var(--gold)}
+.culture-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.culture-card{background:var(--paper);border:1px solid var(--border);border-radius:8px;padding:28px 22px;cursor:pointer;display:flex;flex-direction:column;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.culture-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.culture-card:hover{border-color:rgba(11,158,153,.3);transform:translateY(-3px)}
+.culture-card:hover::after{transform:scaleX(1)}
+.culture-card.open{border-color:var(--teal);background:var(--teal-ll)}
+.culture-card.open::after{transform:scaleX(1)}
+.cc-icon{font-size:20px;margin-bottom:12px}
+.cc-name{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:5px}
+.cc-role-tag{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.cc-line{font-size:12px;font-weight:300;color:var(--ink-50);line-height:1.6;flex-grow:1;margin-bottom:14px}
+.cc-cta{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:5px;transition:gap .2s;margin-top:auto}
+.cc-arrow{display:inline-block;transition:transform .3s var(--ease)}
+.culture-card.open .cc-arrow{transform:rotate(180deg)}
+.alliance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.alliance-card{background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:30px 24px;cursor:pointer;display:flex;flex-direction:column;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.alliance-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.alliance-card:hover{border-color:rgba(160,114,24,.3);transform:translateY(-3px)}
+.alliance-card:hover::after,.alliance-card.open::after{transform:scaleX(1)}
+.alliance-card.open{border-color:rgba(160,114,24,.4);background:var(--gold-ll)}
+.ac-cat{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.ac-name{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--ink);margin-bottom:6px}
+.ac-line{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink-50);margin-bottom:12px;flex-grow:1}
+.ac-who{font-size:11px;font-weight:300;color:var(--ink-30);line-height:1.6;margin-bottom:16px}
+.ac-cta{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:5px;margin-top:auto;transition:gap .2s}
+.alliance-card.open .ac-arrow{transform:rotate(180deg);transition:transform .3s}
+
+/* Expand panels */
+.expand-panel{background:var(--warm);border:1px solid rgba(11,158,153,.2);border-radius:8px;margin-top:12px;display:none;animation:expandDown .3s var(--ease)}
+.expand-panel-al{background:var(--warm);border:1px solid rgba(160,114,24,.2);border-radius:8px;margin-top:12px;display:none;animation:expandDown .3s var(--ease)}
+@keyframes expandDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.ep-inner{padding:36px 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative}
+.ep-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--ink-30);padding:4px 8px;border-radius:var(--r);transition:color .2s}
+.ep-close:hover{color:var(--ink)}
+.ep-h{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-weight:300;color:var(--ink);margin-bottom:12px;line-height:1.15;letter-spacing:-.02em}
+.ep-h em{font-style:italic;color:var(--teal)}
+.ep-body{font-size:13px;font-weight:300;line-height:1.8;color:var(--ink-75);margin-bottom:16px}
+.ep-what{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ep-wi{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;font-weight:300;color:var(--ink-75);line-height:1.55}
+.ep-wi::before{content:'→';color:var(--teal);flex-shrink:0;font-size:11px;margin-top:1px}
+.ep-nonneg{background:var(--teal-ll);border-left:2px solid var(--teal);padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:16px;font-size:12px;color:var(--ink-75);line-height:1.6}
+.ep-nonneg strong{color:var(--teal);font-weight:600}
+.ep-become{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-50);margin-bottom:20px}
+.ep-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.ask-box{background:var(--teal);border-radius:8px;padding:36px 32px;color:var(--night)}
+.ask-lbl{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(9,13,13,.5);margin-bottom:12px;display:block}
+.ask-h{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.2;margin-bottom:12px}
+.ask-body{font-size:13px;line-height:1.75;margin-bottom:22px;color:rgba(9,13,13,.7)}
+.ask-btn{display:inline-flex;font-family:var(--sans);font-size:12px;font-weight:700;color:#fff;background:var(--night);border:1.5px solid var(--night);padding:11px 22px;border-radius:var(--r);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;transition:all .2s;cursor:pointer}
+.ask-btn:hover{background:rgba(0,0,0,.8)}
+
+/* ═══════════════════════════════════════
+   IMPACT
+═══════════════════════════════════════ */
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:40px}
+.impact-cell{background:var(--paper);padding:36px 28px;position:relative}
+.impact-cell.target::after{content:'GOAL';position:absolute;top:12px;right:12px;font-size:8px;font-weight:700;letter-spacing:.16em;color:var(--ink-30);border:1px solid var(--border);padding:2px 6px;border-radius:2px}
+.impact-n{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--teal);line-height:1;margin-bottom:8px;letter-spacing:-.04em}
+.impact-lbl{font-size:13px;font-weight:400;color:var(--ink);margin-bottom:4px}
+.impact-note{font-size:10px;color:var(--ink-30)}
+
+/* ═══════════════════════════════════════
+   TRUST / PROOF
+═══════════════════════════════════════ */
+.proof-list{display:flex;flex-direction:column;gap:1px}
+.proof-item{background:var(--warm);padding:22px 24px;display:flex;align-items:flex-start;gap:16px;transition:background .2s}
+.proof-item:first-child{border-radius:8px 8px 0 0}
+.proof-item:last-child{border-radius:0 0 8px 8px}
+.proof-item:hover{background:var(--mist)}
+.pi-icon{width:34px;height:34px;background:var(--teal-ll);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.pi-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.pi-body{font-size:13px;font-weight:300;color:var(--ink-50);line-height:1.6}
+.trust-law{background:var(--night);border-radius:8px;padding:40px 44px;border-left:3px solid var(--teal);margin-bottom:28px}
+.tl-lbl{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:block}
+.tl-formula{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;letter-spacing:.04em;line-height:1.6}
+
+/* ═══════════════════════════════════════
+   SUPPORT SECTION
+═══════════════════════════════════════ */
+.support-badge{display:inline-flex;align-items:center;gap:8px;background:var(--red-l);border:1px solid rgba(192,57,43,.2);padding:6px 14px;border-radius:40px;margin-bottom:24px}
+.sb-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s infinite;flex-shrink:0}
+.sb-txt{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.crisis-block{background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:28px 32px;margin-bottom:20px}
+.cb-head{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-30);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.cb-head::before{content:'';width:14px;height:1px;background:var(--ink-30)}
+.crisis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cn{display:flex;flex-direction:column;gap:2px}
+.cn-country{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.cn-number{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);letter-spacing:.02em}
+.cn-name{font-size:10px;color:var(--ink-30)}
+.cn-more{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:11px;color:var(--ink-30)}
+.cn-more a{color:var(--teal);text-decoration:none}
+.support-legal{font-size:11px;color:var(--ink-30);line-height:1.75;padding-top:16px;border-top:1px solid var(--border)}
+.support-legal strong{color:var(--ink-50);font-weight:500}
+
+/* ═══════════════════════════════════════
+   TIMELINE
+═══════════════════════════════════════ */
+.tl-list{display:flex;flex-direction:column}
+.tl-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.tl-item:first-child{border-top:1px solid var(--border)}
+.tl-date{font-family:var(--serif);font-size:13px;font-weight:500;color:var(--teal);flex-shrink:0;width:80px;padding-top:2px}
+.tl-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.tl-desc{font-size:12px;font-weight:300;color:var(--ink-50);line-height:1.55}
+
+/* ═══════════════════════════════════════
+   GOVERNANCE
+═══════════════════════════════════════ */
+.gov-block{background:var(--warm);border-radius:6px;padding:36px;margin-bottom:12px;border:1px solid var(--border)}
+.gov-block-dark{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:32px;margin-bottom:12px}
+.gov-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.gov-title-light{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.gov-body{font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-75)}
+.gov-body-dark{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.78)}
+.legal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+/* ═══════════════════════════════════════
+   HUMAN SEASONS
+═══════════════════════════════════════ */
+.seasons-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.season-card{background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:26px 20px;text-align:center;transition:all .25s}
+.season-card:hover{transform:translateY(-3px);border-color:rgba(11,158,153,.25)}
+.season-card.active-season{background:var(--teal);border-color:var(--teal)}
+.sc-emoji{font-size:28px;margin-bottom:12px}
+.sc-name{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.sc-name-light{color:#fff}
+.sc-desc{font-size:11px;font-weight:300;color:var(--ink-50);line-height:1.55}
+.sc-desc-light{color:rgba(255,255,255,.7)}
+
+/* ═══════════════════════════════════════
+   CLOSING CTA
+═══════════════════════════════════════ */
+.closing-section{background:var(--night);padding:160px 0;text-align:center;position:relative;overflow:hidden}
+.closing-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(11,158,153,.12) 0%,transparent 65%);pointer-events:none}
+.closing-h{font-family:var(--serif);font-size:clamp(40px,5.5vw,76px);font-weight:300;line-height:1.1;letter-spacing:-.03em;color:#fff;margin-bottom:18px}
+.closing-h em{font-style:italic;color:var(--teal)}
+.closing-h strong{display:block;font-weight:300;color:var(--teal)}
+.closing-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:48px;font-style:italic;font-family:var(--serif)}
+.closing-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:60px}
+.closing-sig{font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(255,255,255,.35);letter-spacing:.04em}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:#060A0A;padding:64px 0 36px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:24px}
+.ft-brand-name{font-family:var(--serif);font-size:14px;font-weight:400;color:rgba(255,255,255,.72);margin-bottom:8px;line-height:1.3}
+.ft-tagline{font-size:12px;font-weight:300;color:rgba(255,255,255,.78);line-height:1.65;max-width:240px;margin-bottom:10px}
+.ft-legal-note{font-size:10px;letter-spacing:.04em;color:rgba(255,255,255,.3)}
+.ft-col-head{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:14px}
+.ft-links{display:flex;flex-direction:column;gap:8px}
+.ft-links a{font-size:12px;font-weight:300;color:rgba(255,255,255,.58);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:rgba(255,255,255,.7)}
+.ft-support-link{color:rgba(192,57,43,.5)!important}
+.ft-support-link:hover{color:#E87370!important}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-copy{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.04em}
+.ft-soul{font-family:var(--serif);font-style:italic;font-size:11px;color:rgba(255,255,255,.28)}
+
+/* ═══════════════════════════════════════
+   CHALLENGE PAGE SPECIFIC
+═══════════════════════════════════════ */
+.challenge-hero{background:var(--paper);padding:100px 0 80px;position:relative;overflow:hidden}
+.ch-glow{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(11,158,153,.07) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+
+/* ═══════════════════════════════════════
+   CULTURE PAGE HEADER
+═══════════════════════════════════════ */
+.culture-hero{background:var(--paper);padding:100px 0 60px;border-bottom:1px solid var(--border)}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;min-height:auto;padding:48px 40px 32px}
+  .hero-vis{max-width:400px;margin:0 auto}
+  .two-col,.two-col-c{grid-template-columns:1fr;gap:48px}
+  .axiom-grid{grid-template-columns:repeat(3,1fr)}
+  .culture-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-row,.impact-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell:nth-child(3){border-top:1px solid var(--border)}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .seasons-row{grid-template-columns:repeat(3,1fr)}
+  .ep-inner{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:720px){
+  :root{--nav:58px}
+  .wrap,.wrap-md,.wrap-sm{padding:0 20px}
+  .hero-inner{padding:36px 20px 24px}
+  nav ul,.btn-nav-red{display:none}
+  .hamburger{display:flex}
+  .nav-actions .btn-nav-teal{font-size:11px;padding:7px 14px}
+  .axiom-grid,.culture-grid,.alliance-grid{grid-template-columns:1fr 1fr}
+  .stats-row,.impact-grid,.three-col,.four-col,.legal-grid,.crisis-grid{grid-template-columns:1fr}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--border)}
+  .stat-cell:last-child{border-bottom:none}
+  .ft-grid{grid-template-columns:1fr}
+  .seasons-row{grid-template-columns:repeat(2,1fr)}
+  .ep-inner{padding:24px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+/* ═══════════════════════════════════════
+   ROLE/ALLIANCE DETAIL PAGES
+═══════════════════════════════════════ */
+.role-hero{background:var(--paper);padding:100px 0 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.role-hero::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,var(--teal-ll) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.role-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.role-tag::before{content:'';width:16px;height:1px;background:var(--teal)}
+.role-h{font-family:var(--serif);font-size:clamp(38px,5vw,68px);font-weight:300;line-height:1.05;letter-spacing:-.025em;color:var(--ink);margin-bottom:18px}
+.role-h em{font-style:italic;color:var(--teal)}
+.role-deck{font-family:var(--serif);font-size:20px;font-weight:300;font-style:italic;color:var(--ink-50);margin-bottom:36px;max-width:600px;line-height:1.5}
+.four-steps{display:flex;flex-direction:column}
+.fs{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.fs:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.fs-n{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--teal);line-height:1;flex-shrink:0;width:38px}
+.fs-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px}
+.fs-desc{font-size:12px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.6}
+
+/* ═══════════════════════════════════
+   TOOLKIT PAGE
+═══════════════════════════════════ */
+.tk-hero{background:var(--paper);padding:100px 0 70px;border-bottom:1px solid var(--border)}
+.tk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+.tk-card{background:var(--warm);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s var(--ease);display:flex;flex-direction:column}
+.tk-card:hover{transform:translateY(-4px);border-color:rgba(11,158,153,.3);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.tk-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.tk-thumb-teal{background:linear-gradient(135deg,rgba(11,158,153,.12) 0%,rgba(11,158,153,.04) 100%)}
+.tk-thumb-gold{background:linear-gradient(135deg,rgba(160,114,24,.12) 0%,rgba(160,114,24,.04) 100%)}
+.tk-thumb-ink{background:linear-gradient(135deg,rgba(17,17,17,.06) 0%,rgba(17,17,17,.02) 100%)}
+.tk-body{padding:24px 22px;flex-grow:1;display:flex;flex-direction:column}
+.tk-format{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-30);margin-bottom:8px}
+.tk-name{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.tk-desc{font-size:12px;font-weight:300;color:var(--ink-50);line-height:1.65;margin-bottom:18px;flex-grow:1}
+.tk-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;background:none;border:none;padding:0;transition:gap .2s;margin-top:auto}
+.tk-btn:hover{gap:11px}
+.tk-btn-solid{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--teal);border:none;padding:10px 18px;border-radius:var(--r);cursor:pointer;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.tk-btn-solid:hover{background:var(--teal-d)}
+.tk-usage-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
+.tk-usage-item{background:var(--teal-ll);border:1px solid rgba(11,158,153,.15);border-radius:8px;padding:20px}
+.tku-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.tku-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.tku-body{font-size:12px;font-weight:300;color:var(--ink-50);line-height:1.6}
+.brand-rule{background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:32px 36px;margin-bottom:16px;display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:center}
+.br-swatch{height:72px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.br-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.br-hex{font-size:12px;font-weight:400;color:var(--ink-50);font-family:monospace;letter-spacing:.04em}
+.br-use{font-size:12px;font-weight:300;color:var(--ink-50);margin-top:4px;line-height:1.55}
+
+/* ═══════════════════════════════════
+   PRESS PAGE
+═══════════════════════════════════ */
+.press-hero{background:var(--night);padding:100px 0 70px;position:relative;overflow:hidden}
+.press-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(11,158,153,.1) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.press-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:48px}
+.press-card{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;transition:all .3s var(--ease)}
+.press-card:hover{transform:translateY(-3px);border-color:rgba(11,158,153,.3);box-shadow:0 12px 36px rgba(0,0,0,.07)}
+.pc-type{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.pc-name{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:8px;line-height:1.25}
+.pc-desc{font-size:13px;font-weight:300;color:var(--ink-50);line-height:1.7;margin-bottom:20px;flex-grow:1}
+.pc-includes{margin-bottom:20px}
+.pc-inc-item{font-size:11.5px;color:var(--ink-75);line-height:1.6;display:flex;align-items:flex-start;gap:8px}
+.pc-inc-item::before{content:'→';color:var(--teal);flex-shrink:0;font-size:10px;margin-top:2px}
+.fact-sheet{background:var(--night);border-radius:10px;padding:44px 40px}
+.fs-row{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.fs-row:last-child{border-bottom:none}
+.fs-key{font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.4);text-transform:uppercase;flex-shrink:0;width:160px}
+.fs-val{font-size:13px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.55;text-align:right}
+.quote-card{background:var(--teal-ll);border:1px solid rgba(11,158,153,.2);border-radius:10px;padding:36px 32px;margin-bottom:16px}
+.qc-quote{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);font-weight:300;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:12px}
+.qc-attr{font-size:12px;font-weight:600;color:var(--teal);letter-spacing:.04em}
+.contact-card{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:14px}
+.cc-icon-lg{width:48px;height:48px;background:var(--teal-ll);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:4px}
+.cc-role{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.cc-person{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink)}
+.cc-org{font-size:13px;font-weight:300;color:var(--ink-50)}
+.cc-email{font-size:13px;color:var(--teal);text-decoration:none;font-weight:500}
+.cc-email:hover{text-decoration:underline}
+.cc-note{font-size:12px;font-weight:300;color:var(--ink-30);font-style:italic;line-height:1.55}
+.embargo-box{background:var(--gold-ll);border:1px solid rgba(160,114,24,.25);border-radius:8px;padding:20px 24px}
+.eb-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.eb-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-75)}
+
+/* ═══════════════════════════════════
+   CONTRIBUTE PAGE
+═══════════════════════════════════ */
+.contribute-hero{background:var(--paper);padding:100px 0 70px;border-bottom:1px solid var(--border)}
+.rail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px}
+.rail-card{border-radius:10px;padding:40px 32px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s var(--ease)}
+.rail-card:hover{transform:translateY(-4px)}
+.rail-teal{background:var(--teal);color:var(--night)}
+.rail-warm{background:var(--warm);border:1px solid var(--border)}
+.rail-dark{background:var(--night);border:1px solid rgba(255,255,255,.08)}
+.rail-badge{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;display:block}
+.rail-badge-light{color:rgba(9,13,13,.5)}
+.rail-badge-teal{color:var(--teal)}
+.rail-badge-gold{color:var(--gold)}
+.rail-h{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:10px;line-height:1.2}
+.rail-h-dark{color:#fff}
+.rail-h-warm{color:var(--ink)}
+.rail-h-teal{color:var(--night)}
+.rail-body{font-size:13px;font-weight:300;line-height:1.75;margin-bottom:24px;flex-grow:1}
+.rail-body-dark{color:rgba(255,255,255,.72)}
+.rail-body-warm{color:var(--ink-75)}
+.rail-body-teal{color:rgba(9,13,13,.7)}
+.rail-features{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.rf-item{font-size:12px;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.rf-item-dark{color:rgba(255,255,255,.72)}
+.rf-item-warm{color:var(--ink-75)}
+.rf-item-teal{color:rgba(9,13,13,.7)}
+.rf-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.rf-dot-teal{background:var(--teal)}
+.rf-dot-gold{background:var(--gold)}
+.rf-dot-white{background:rgba(255,255,255,.5)}
+.rf-dot-dark{background:rgba(9,13,13,.4)}
+.use-of-funds{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:36px 40px;margin-bottom:32px}
+.uf-row{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+.uf-row:last-child{border-bottom:none}
+.uf-pct{font-family:var(--serif);font-size:32px;font-weight:300;color:var(--teal);width:72px;flex-shrink:0;line-height:1}
+.uf-bar-wrap{flex-grow:1;height:4px;background:var(--border);border-radius:2px;position:relative}
+.uf-bar{height:100%;border-radius:2px;background:var(--teal)}
+.uf-label{font-size:13px;font-weight:500;color:var(--ink);min-width:220px}
+.uf-desc{font-size:11px;font-weight:300;color:var(--ink-50);margin-top:1px}
+.trust-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px}
+.tb{background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:22px 18px;text-align:center}
+.tb-icon{font-size:22px;margin-bottom:10px}
+.tb-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.tb-desc{font-size:11px;font-weight:300;color:var(--ink-50);line-height:1.55}
+
+@media(max-width:1100px){
+  .tk-grid,.press-grid,.rail-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-badges{grid-template-columns:repeat(2,1fr)}
+  .brand-rule{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .tk-grid,.press-grid,.rail-grid,.tk-usage-grid,.trust-badges{grid-template-columns:1fr}
+  .fs-row{flex-direction:column;gap:4px}
+  .fs-val{text-align:left}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="javascript:void(0)" class="logo-a" onclick="nav('home');return false;" aria-label="Butterfly Challenge home">
+      <img class="logo-mark" src="one_humanity_foundation_logo-Photoroom.png" alt="One Humanity Foundation logo">
+      <div>
+        <span class="logo-name">Butterfly Challenge</span>
+        <span class="logo-tag">Lift a Billion Hands</span>
+      </div>
+    </a>
+    <ul>
+      <li><a href="javascript:void(0)" onclick="nav('home');return false;">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="nav('challenge');return false;">The Challenge</a></li>
+      <li><a href="javascript:void(0)" onclick="nav('culture');return false;">Culture</a></li>
+      <li><a href="javascript:void(0)" onclick="nav('alliances');return false;">Alliances</a></li>
+      <li><a href="javascript:void(0)" onclick="nav('toolkit');return false;">Toolkit</a></li>
+      <li><a href="javascript:void(0)" onclick="nav('press');return false;">Press</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="javascript:void(0)" class="btn-nav-red" onclick="nav('support');return false;">Find Support</a>
+      <a href="javascript:void(0)" class="btn-nav-teal" onclick="nav('challenge');return false;">Take the Challenge</a>
+      <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <a href="javascript:void(0)" onclick="nav('home');closeMenu();return false;">Home</a>
+  <a href="javascript:void(0)" onclick="nav('challenge');closeMenu();return false;">The Challenge</a>
+  <a href="javascript:void(0)" onclick="nav('culture');closeMenu();return false;">Culture</a>
+  <a href="javascript:void(0)" onclick="nav('alliances');closeMenu();return false;">Alliances</a>
+  <a href="javascript:void(0)" onclick="nav('impact');closeMenu();return false;">Impact</a>
+  <a href="javascript:void(0)" onclick="nav('toolkit');closeMenu();return false;">Toolkit</a>
+  <a href="javascript:void(0)" onclick="nav('press');closeMenu();return false;">Press</a>
+  <a href="javascript:void(0)" onclick="nav('governance');closeMenu();return false;">Governance</a>
+  <div class="drawer-actions">
+    <a href="javascript:void(0)" class="btn-red" onclick="nav('support');closeMenu();return false;">Find Support Now</a>
+    <a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');closeMenu();return false;">Take the Challenge</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Butterfly Challenge — Show up for mental health">
+    <div class="hero-bg-circle" aria-hidden="true"></div>
+    <div class="hero-bg-circle2" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge" role="status">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          <span class="hero-badge-txt">The Butterfly Challenge · Global Mental Health Movement</span>
+        </div>
+        <h1 style="margin-bottom:12px;line-height:1">
+          <span style="font-family:var(--sans);font-size:clamp(52px,7vw,92px);font-weight:700;letter-spacing:.025em;color:var(--ink);display:block;line-height:.95">SHOW UP.</span>
+          <span style="font-family:var(--serif);font-size:clamp(30px,4vw,56px);font-weight:300;font-style:italic;color:var(--teal);display:block;margin-top:14px;line-height:1.1">For mental health.</span>
+        </h1>
+        <p style="font-family:var(--serif);font-size:clamp(15px,1.6vw,20px);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:22px;padding-left:16px;border-left:2px solid rgba(160,114,24,.3)">For someone you care about.</p>
+        <div class="hero-truth">
+          <p>Someone you care about is carrying something in silence right now.</p>
+          <p><strong>1 billion people</strong> are living with a mental health condition. Most will wait <strong>11 years</strong> before anyone shows up.</p>
+          <p style="margin-top:8px"><strong style="color:var(--ink);font-size:17px">You can show up today.</strong></p>
+        </div>
+        <div class="hero-stack">
+          <div class="hs-soul">I got you.</div>
+          <div class="hs-msg">I see you. I care. You are not alone.</div>
+          <div class="hs-act">Take the Challenge. Show the Love. Lift 3 More.</div>
+        </div>
+        <p class="hero-reason">For someone you care about.</p>
+        <div class="hero-ctas">
+          <a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');return false;">Take the Challenge</a>
+          <a href="javascript:void(0)" class="btn-secondary" onclick="nav('alliances');return false;">Become a Founding Partner</a>
+        </div>
+        <div class="hero-date">
+          <span class="hd-dot" aria-hidden="true"></span>
+          <span class="hd-txt">April 30 · Miami · Where it begins</span>
+        </div>
+      </div>
+      <div class="hero-vis" aria-hidden="true">
+        <div class="hr1 hero-ring"></div>
+        <div class="hr2 hero-ring"></div>
+        <svg class="hero-butterfly" width="280" height="220" viewBox="0 0 300 236" fill="none">
+          <path d="M150 128C124 112 68 82 26 57 9 46 5 28 17 15 29 2 52 5 79 21 111 41 138 84 150 128Z" fill="#0B9E99" opacity=".85"/>
+          <path d="M150 128C176 112 232 82 274 57 291 46 295 28 283 15 271 2 248 5 221 21 189 41 162 84 150 128Z" fill="#0B9E99" opacity=".85"/>
+          <path d="M150 128C128 143 84 174 70 200 60 217 69 230 85 230 103 230 129 212 145 188 152 176 154 152 150 128Z" fill="#0B9E99" opacity=".38"/>
+          <path d="M150 128C172 143 216 174 230 200 240 217 231 230 215 230 197 230 171 212 155 188 148 176 146 152 150 128Z" fill="#0B9E99" opacity=".38"/>
+          <ellipse cx="150" cy="130" rx="3.5" ry="24" fill="#087975"/>
+          <path d="M144 104Q128 80 114 65" stroke="#087975" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M156 104Q172 80 186 65" stroke="#087975" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="113" cy="63" r="3" fill="#087975"/>
+          <circle cx="187" cy="63" r="3" fill="#087975"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section aria-label="Why this exists">
+    <div class="stats-row">
+      <div class="stat-cell reveal">
+        <div class="stat-n-wrap"><span class="stat-num">1</span><span class="stat-word"> billion</span></div>
+        <div class="stat-label">people living with a mental health condition globally</div>
+        <div class="stat-src">World Health Organization (WHO), 2023</div>
+      </div>
+      <div class="stat-cell reveal d1">
+        <div class="stat-n-wrap"><span class="stat-num">11</span><span class="stat-word"> years</span></div>
+        <div class="stat-label">average delay between first symptoms and receiving help</div>
+        <div class="stat-src">WHO / Kessler et al., peer-reviewed</div>
+      </div>
+      <div class="stat-cell reveal d2">
+        <div class="stat-n-wrap"><span class="stat-num">$5</span><span class="stat-word"> trillion</span></div>
+        <div class="stat-label">projected annual economic loss from untreated mental health</div>
+        <div class="stat-src">WEF / Lancet Commission</div>
+        <div class="stat-caveat">Projected figure for 2030 — not current cost</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS EXISTS -->
+  <section class="sec-light" aria-label="Why the Butterfly Challenge exists">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="eyebrow">Why this exists</div>
+          <h2 class="h-xl">The world built systems for almost <em>everything.</em> Not for mental health.</h2>
+        </div>
+        <div class="reveal d1">
+          <p class="body-lg" style="margin-bottom:20px">Mental health touches every family, every school, every team, every workplace, every community on earth.</p>
+          <p class="body-md" style="margin-bottom:20px">The person sitting across from you at dinner. The one who has been quieter than usual. The one you keep meaning to check in on. The one you almost lost.</p>
+          <p class="body-md" style="margin-bottom:20px"><strong style="color:var(--ink)">You don't always know.</strong> And by the time you do — it has sometimes been too long.</p>
+          <p class="body-md"><strong style="color:var(--ink)">The Butterfly Challenge exists because of that silence. Not to talk about it. To break it.</strong></p>
+          <div class="quote" style="margin-top:28px">"This is not about awareness. It is about showing up."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SIGN -->
+  <section class="sec-warm" aria-label="The Butterfly Sign">
+    <div class="wrap">
+      <div class="two-col-c">
+        <div class="reveal">
+          <div class="sign-frame" role="img" aria-label="The Butterfly Sign — two hands forming butterfly wings">
+            <svg width="200" height="160" viewBox="0 0 260 200" fill="none" aria-hidden="true">
+              <path d="M88 108 Q58 103 44 118 Q28 134 33 153 Q38 170 58 173 Q76 176 88 163 Q100 150 100 132Z" fill="#B8975A" opacity=".8"/>
+              <path d="M88 108 Q86 87 83 74" stroke="#B8975A" stroke-width="11" stroke-linecap="round"/>
+              <path d="M88 108 Q77 90 70 80" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M88 108 Q70 96 62 88" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <path d="M88 108 Q96 97 103 91" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <path d="M172 108 Q202 103 216 118 Q232 134 227 153 Q222 170 202 173 Q184 176 172 163 Q160 150 160 132Z" fill="#B8975A" opacity=".8"/>
+              <path d="M172 108 Q174 87 177 74" stroke="#B8975A" stroke-width="11" stroke-linecap="round"/>
+              <path d="M172 108 Q183 90 190 80" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M172 108 Q190 96 198 88" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <path d="M172 108 Q164 97 157 91" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <ellipse cx="130" cy="136" rx="15" ry="13" fill="#B8975A" opacity=".6"/>
+              <ellipse cx="76" cy="102" rx="44" ry="28" fill="rgba(11,158,153,.1)" transform="rotate(-18 76 102)"/>
+              <ellipse cx="184" cy="102" rx="44" ry="28" fill="rgba(11,158,153,.1)" transform="rotate(18 184 102)"/>
+            </svg>
+            <div class="sign-label">The Butterfly Sign · For Mental Health</div>
+            <div class="sign-three" aria-label="What the sign means">
+              <div class="sign-promise">I see you.</div>
+              <div class="sign-promise">I care.</div>
+              <div class="sign-promise">You are not alone.</div>
+            </div>
+            <p style="font-size:11px;color:var(--ink-30);text-align:center">Replace with production photography</p>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <div class="eyebrow">The Butterfly Sign</div>
+          <h2 class="h-xl">Two hands.<br>One signal.</h2>
+          <p class="body-lg" style="margin-bottom:20px">The Butterfly Sign is how you show up for mental health when you do not have the words. The first universal gesture for care since the peace sign — made by anyone, in any language, in any room on earth.</p>
+          <p class="body-md" style="margin-bottom:28px">No diagnosis. No perfect moment. No language barrier. No words required. Just two hands and the willingness to show up.</p>
+          <a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');return false;">Learn the Sign</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec-light" aria-label="How the challenge works">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;margin-bottom:64px">
+        <div class="eyebrow eyebrow-center">How it works</div>
+        <h2 class="h-xl">Three steps. <em>A billion hands.</em></h2>
+        <p class="body-md" style="max-width:500px;margin:12px auto 0">For mental health. For someone you care about. For the 1 billion people carrying something in silence.</p>
+      </div>
+      <div class="two-col-c reveal d1">
+        <div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-n">1</div>
+              <div><div class="step-title">Take the Challenge</div><div class="step-body">Make the Butterfly Sign. Complete the Hero Act — revealed live from Miami on April 30. The act that makes mental health visible at scale.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-n">2</div>
+              <div><div class="step-title">Show the Love</div><div class="step-body">Share the message: I see you. I care. You are not alone. For someone carrying something alone. For mental health.</div></div>
+            </div>
+            <div class="step">
+              <div class="step-n">3</div>
+              <div><div class="step-title">Lift 3 More</div><div class="step-body">Tag three people you care about. Give them 24 hours. That is how a billion hands rise for mental health.</div></div>
+            </div>
+          </div>
+          <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+            <a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');return false;">Take the Challenge</a>
+            <a href="javascript:void(0)" class="btn-secondary" onclick="nav('challenge');return false;">Learn the Sign</a>
+          </div>
+        </div>
+        <div>
+          <div class="private-prompt">
+            <div class="pp-glow" aria-hidden="true"></div>
+            <span class="pp-lbl">Before you post</span>
+            <div class="pp-q">"Who are you doing<br>this for?"</div>
+            <div class="pp-body">Hold a name in your mind. You don't have to say it out loud. You just have to mean it.<br><br>The Butterfly Challenge is not asking people to confess. It is asking them to show up for someone they care about.</div>
+            <div class="pp-soul">I got you.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO PATHS -->
+  <section class="sec-warm" aria-label="Two ways to join">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;margin-bottom:56px">
+        <div class="eyebrow eyebrow-center">Choose your path</div>
+        <h2 class="h-xl">Everyone has a role. <em>Find yours.</em></h2>
+      </div>
+      <div class="two-col reveal d1">
+        <div class="path-card">
+          <div class="path-top-bar" style="background:var(--teal)"></div>
+          <div class="eyebrow" style="margin-bottom:12px">For people</div>
+          <h3 style="font-family:var(--sans);font-size:clamp(28px,3.5vw,44px);font-weight:700;letter-spacing:.02em;color:#fff;margin-bottom:4px;line-height:1">SHOW UP.</h3>
+          <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(255,255,255,.55);margin-bottom:20px">for someone you care about.</p>
+          <p class="body-md" style="margin-bottom:28px">This is for anyone who has ever cared about someone who was carrying something they couldn't say out loud.</p>
+          <div class="path-num">
+            <div class="path-step"><div class="psn">1</div><div><div class="pst">Take the Challenge</div><div class="psd">Make the sign. Complete the Hero Act.</div></div></div>
+            <div class="path-step"><div class="psn">2</div><div><div class="pst">Show the Love</div><div class="psd">Share the message. Make care visible.</div></div></div>
+            <div class="path-step" style="border-bottom:none"><div class="psn">3</div><div><div class="pst">Lift 3 More</div><div class="psd">Tag 3 people. 24 hours. That is how it moves.</div></div></div>
+          </div>
+          <div style="margin-top:28px"><a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');return false;">Take the Challenge</a></div>
+        </div>
+        <div class="path-card-dark">
+          <div class="path-top-bar" style="background:var(--gold)"></div>
+          <div class="eyebrow eyebrow-gold" style="margin-bottom:12px">For organizations</div>
+          <h3 class="h-md" style="margin-bottom:16px;color:#fff">Sign. Show. Activate.</h3>
+          <p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.78);margin-bottom:28px">This is how a movement for mental health travels at scale — through the platforms, venues, and communities that already reach the world.</p>
+          <div class="path-num">
+            <div class="path-step path-step-dark"><div class="psn psn-gold">1</div><div><div class="pst pst-dark">Sign</div><div class="psd psd-dark">Join as a Founding Alliance Partner.</div></div></div>
+            <div class="path-step path-step-dark"><div class="psn psn-gold">2</div><div><div class="pst pst-dark">Show</div><div class="psd psd-dark">Put the signal on your platform, venue, or community.</div></div></div>
+            <div class="path-step path-step-dark" style="border-bottom:none"><div class="psn psn-gold">3</div><div><div class="pst pst-dark">Activate</div><div class="psd psd-dark">Mobilize your audience, employees, fans, or students.</div></div></div>
+          </div>
+          <div style="margin-top:28px"><a href="javascript:void(0)" class="btn-gold" onclick="nav('alliances');return false;">Become a Founding Partner</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE PREVIEW (inline expand) -->
+  <section class="sec-light" aria-label="Culture and alliances">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:56px">
+        <div class="eyebrow">How culture shows up for mental health</div>
+        <h2 class="h-xl" style="max-width:760px">Every role. Every alliance. <em>Right here.</em></h2>
+        <p class="body-md" style="max-width:560px;margin-top:12px">Tap any card to see the full role or alliance brief — everything opens here, no navigation needed.</p>
+      </div>
+      <div class="eyebrow" style="margin-bottom:16px">Culture</div>
+      <div class="axiom-grid reveal" style="margin-bottom:32px">
+        <div class="axiom"><div class="ax-role">Creators</div><div class="ax-line">ignite it.</div></div>
+        <div class="axiom"><div class="ax-role">Celebrities</div><div class="ax-line">give it consequence.</div></div>
+        <div class="axiom"><div class="ax-role">Sports</div><div class="ax-line">give it strength.</div></div>
+        <div class="axiom"><div class="ax-role">Music</div><div class="ax-line">give it sound.</div></div>
+        <div class="axiom"><div class="ax-role">Dance</div><div class="ax-line">give it motion.</div></div>
+        <div class="axiom"><div class="ax-role">Film</div><div class="ax-line">give it story.</div></div>
+        <div class="axiom"><div class="ax-role">Fashion</div><div class="ax-line">give it statement.</div></div>
+        <div class="axiom"><div class="ax-role">Art</div><div class="ax-line">give it image.</div></div>
+        <div class="axiom"><div class="ax-role">Faith & Community</div><div class="ax-line">give it trust.</div></div>
+        <div class="axiom"><div class="ax-role">Gaming & Esports</div><div class="ax-line">give it world.</div></div>
+        <div class="axiom"><div class="ax-role">Podcast</div><div class="ax-line">give it voice.</div></div>
+        <div class="axiom"><div class="ax-role">Everyone</div><div class="ax-line">gives it humanity.</div></div>
+      </div>
+      <div class="culture-grid reveal" id="culture-home-grid">
+        <div class="culture-card" data-role="creators" onclick="toggleCultureCard(this,'creators')"><span class="cc-icon">🎥</span><div class="cc-name">Creators</div><div class="cc-role-tag">Ignition</div><div class="cc-line">You have the reach. This is the moment to use it for the one thing that outlasts a trend.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="celebrities" onclick="toggleCultureCard(this,'celebrities')"><span class="cc-icon">⭐</span><div class="cc-name">Celebrities</div><div class="cc-role-tag">Consequence</div><div class="cc-line">Some moments need a voice the world already trusts.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="sports" onclick="toggleCultureCard(this,'sports')"><span class="cc-icon">🏆</span><div class="cc-name">Sports</div><div class="cc-role-tag">Strength</div><div class="cc-line">Athletes show the world what strength looks like. Showing up is strength.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="music" onclick="toggleCultureCard(this,'music')"><span class="cc-icon">🎵</span><div class="cc-name">Music</div><div class="cc-role-tag">Sound</div><div class="cc-line">Some moments need a sound before they have a language.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="dance" onclick="toggleCultureCard(this,'dance')"><span class="cc-icon">💃</span><div class="cc-name">Dance</div><div class="cc-role-tag">Motion</div><div class="cc-line">Some moments need a body before they have a word.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="film" onclick="toggleCultureCard(this,'film')"><span class="cc-icon">🎬</span><div class="cc-name">Film</div><div class="cc-role-tag">Story</div><div class="cc-line">Some moments need a story before they become memory.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="fashion" onclick="toggleCultureCard(this,'fashion')"><span class="cc-icon">👗</span><div class="cc-name">Fashion</div><div class="cc-role-tag">Statement</div><div class="cc-line">Some moments need a statement before they have a speech.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="art" onclick="toggleCultureCard(this,'art')"><span class="cc-icon">🎨</span><div class="cc-name">Art</div><div class="cc-role-tag">Image</div><div class="cc-line">Some moments need an image before they have an explanation.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="faith" onclick="toggleCultureCard(this,'faith')"><span class="cc-icon">🕊</span><div class="cc-name">Faith & Community</div><div class="cc-role-tag">Trust</div><div class="cc-line">Some places the world cannot reach without trust first.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="gaming" onclick="toggleCultureCard(this,'gaming')"><span class="cc-icon">🎮</span><div class="cc-name">Gaming & Esports</div><div class="cc-role-tag">World</div><div class="cc-line">3.6 billion players. One of the biggest shared worlds on earth.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="podcast" onclick="toggleCultureCard(this,'podcast')"><span class="cc-icon">🎙</span><div class="cc-name">Podcast</div><div class="cc-role-tag">Voice</div><div class="cc-line">Some messages are too personal for the feed. They need a voice.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+      </div>
+      <div class="expand-panel" id="expand-culture-home"></div>
+      <div class="eyebrow eyebrow-gold" style="margin-bottom:16px">Alliance Partners</div>
+      <h3 class="h-lg" style="margin-bottom:12px;max-width:640px">A billion hands need more than a challenge. <em>They need a road.</em></h3>
+      <p class="body-md" style="max-width:520px;margin-bottom:40px">Six founding alliance categories. Each one a different road the movement travels. Tap any to see the full brief.</p>
+      <div class="alliance-grid reveal" id="alliance-home-grid">
+        <div class="alliance-card" data-al="platform" onclick="toggleAllianceCard(this,'platform')"><div class="ac-cat">PA-2026-001</div><span style="font-size:22px;margin-bottom:10px;display:block">📱</span><div class="ac-name">Platforms</div><div class="ac-line">This is how a movement travels.</div><div class="ac-who">TikTok · YouTube · Meta · Instagram · X · Snapchat · Discord · Twitch · LinkedIn</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="care" onclick="toggleAllianceCard(this,'care')"><div class="ac-cat">CA-2026-002</div><span style="font-size:22px;margin-bottom:10px;display:block">💚</span><div class="ac-name">Care & Community</div><div class="ac-line">This is how a movement joins the people already showing up.</div><div class="ac-who">Mental health orgs · NGOs · Charities · Humanitarian groups</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="media" onclick="toggleAllianceCard(this,'media')"><div class="ac-cat">MA-2026-003</div><span style="font-size:22px;margin-bottom:10px;display:block">📡</span><div class="ac-name">Media</div><div class="ac-line">This is how a movement is witnessed.</div><div class="ac-who">Broadcasters · Publishers · Press · Documentary · Podcast networks</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="business" onclick="toggleAllianceCard(this,'business')"><div class="ac-cat">BA-2026-004</div><span style="font-size:22px;margin-bottom:10px;display:block">🏢</span><div class="ac-name">Business</div><div class="ac-line">This is how a movement becomes part of how business shows up.</div><div class="ac-who">Brands · Employers · CSR teams · Corporate foundations · Family offices</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="education" onclick="toggleAllianceCard(this,'education')"><div class="ac-cat">EA-2026-005</div><span style="font-size:22px;margin-bottom:10px;display:block">🎓</span><div class="ac-name">Education</div><div class="ac-line">This is how a movement reaches the next generation.</div><div class="ac-who">Schools · Universities · Student networks · Youth organizations</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="connectivity" onclick="toggleAllianceCard(this,'connectivity')"><div class="ac-cat">CNA-2026-006</div><span style="font-size:22px;margin-bottom:10px;display:block">🌐</span><div class="ac-name">Connectivity</div><div class="ac-line">This is how a movement reaches every hand.</div><div class="ac-who">Telcos · Mobile carriers · SMS platforms · Device ecosystems</div><div class="ac-cta">See the brief <span class="ac-arrow">↓</span></div></div>
+      </div>
+      <div class="expand-panel-al" id="expand-alliance-home"></div>
+      <div style="margin-top:48px;background:var(--teal-ll);border:1px solid rgba(11,158,153,.2);border-radius:var(--r);padding:22px 26px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:7px">Non-Negotiable — All Alliance Categories</div>
+        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-75)">Safety before scale. Always. Every official alliance partner integrates one-tap access to verified mental health support before any activation launches. Not a suggestion. The condition of partnership.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUTTERFLY MONTH -->
+  <section class="sec-warm" aria-label="Butterfly Month — timing">
+    <div class="wrap">
+      <div class="two-col-c">
+        <div class="reveal">
+          <div class="eyebrow eyebrow-gold">Butterfly Month</div>
+          <h2 class="h-xl">April 30. Miami.<br><em>Where it begins.</em></h2>
+          <p class="body-lg" style="margin-bottom:28px">Every May, the world shows up for mental health.</p>
+          <div class="tl-list">
+            <div class="tl-item"><div class="tl-date">Apr 30</div><div><div class="tl-title">One Night For One Humanity</div><div class="tl-desc">Queen Miami Beach · Hero Act revealed live · F1 Weekend</div></div></div>
+            <div class="tl-item"><div class="tl-date">May 1</div><div><div class="tl-title">Butterfly Month begins</div><div class="tl-desc">Challenge goes global · Culture activates · The world shows up</div></div></div>
+            <div class="tl-item"><div class="tl-date">Jul 19</div><div><div class="tl-title">FIFA World Cup Final</div><div class="tl-desc">MetLife Stadium · 5 billion watching</div></div></div>
+            <div class="tl-item"><div class="tl-date">Sep 2026</div><div><div class="tl-title">UN General Assembly</div><div class="tl-desc">Butterfly Week · Institutional mandate · 195 countries</div></div></div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <div style="background:var(--night);border-radius:10px;padding:48px 40px;position:relative;overflow:hidden;min-height:360px;display:flex;flex-direction:column;justify-content:flex-end">
+            <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(11,158,153,.18) 0%,transparent 65%)"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);animation:float 6s ease-in-out infinite" aria-hidden="true">
+              <svg width="120" height="95" viewBox="0 0 300 236" fill="none"><path d="M150 128C124 112 68 82 26 57 9 46 5 28 17 15 29 2 52 5 79 21 111 41 138 84 150 128Z" fill="#0B9E99" opacity=".5"/><path d="M150 128C176 112 232 82 274 57 291 46 295 28 283 15 271 2 248 5 221 21 189 41 162 84 150 128Z" fill="#0B9E99" opacity=".5"/><path d="M150 128C128 143 84 174 70 200 60 217 69 230 85 230 103 230 129 212 145 188 152 176 154 152 150 128Z" fill="#0B9E99" opacity=".25"/><path d="M150 128C172 143 216 174 230 200 240 217 231 230 215 230 197 230 171 212 155 188 148 176 146 152 150 128Z" fill="#0B9E99" opacity=".25"/></svg>
+            </div>
+            <div style="position:relative;z-index:1;background:rgba(255,255,255,.04);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);padding:20px 24px;border-radius:8px">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Queen Miami Beach</div>
+              <div style="font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;line-height:1.25;margin-bottom:4px">One Night For<br>One Humanity</div>
+              <div style="font-size:11px;color:rgba(255,255,255,.6)">April 30, 2026 · Miami Grand Prix Weekend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="sec-light" aria-label="Why trust the Butterfly Challenge">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="eyebrow">Why trust this</div>
+          <h2 class="h-xl">Serious mission.<br><em>Serious stewardship.</em></h2>
+          <p class="body-lg" style="margin-bottom:32px">The Butterfly Challenge is stewarded by One Humanity Foundation — governed independently, reported publicly, built to the standard that serious institutions, media, and partners require.</p>
+          <div class="proof-list" style="margin-bottom:28px">
+            <div class="proof-item"><div class="pi-icon">🏛</div><div><div class="pi-title">One Humanity Foundation</div><div class="pi-body">U.S. 501(c)(3) nonprofit. Independent governance. Auditable from Day 1.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">🛡</div><div><div class="pi-title">Safety Officer with unilateral veto</div><div class="pi-body">Cannot be overruled. Cannot be a PR firm. Unilateral authority. Always.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">📡</div><div><div class="pi-title">Reported weekly</div><div class="pi-body">Money In → Money Out → Programs → Outcomes. Every dollar visible.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">✅</div><div><div class="pi-title">IASP safe messaging</div><div class="pi-body">Every piece of content. Non-diagnostic. No stigma. No fear. No clinical language on public surfaces.</div></div></div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="javascript:void(0)" class="btn-secondary" onclick="nav('governance');return false;">View Governance</a>
+            <a href="javascript:void(0)" class="btn-secondary" onclick="nav('impact');return false;">See Impact</a>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <div class="trust-law">
+            <span class="tl-lbl">The Trust Law — binding, not advisory</span>
+            <div class="tl-formula">Money In<br>↓<br>Money Out<br>↓<br>Programs<br>↓<br>Outcomes</div>
+          </div>
+          <div style="background:var(--warm);border:1px solid var(--border);border-radius:8px;padding:28px">
+            <div style="font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px">The governing alliance sentence</div>
+            <div class="quote" style="font-size:15px">The Butterfly Movement is not here to replace the people already carrying care. It is here to give the world a signal that helps more people show up — and helps the organizations already doing the work reach further.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT RAIL -->
+  <section class="sec-dark" style="padding:80px 0" aria-label="Mental health support">
+    <div class="wrap-sm">
+      <div class="support-badge"><span class="sb-dot"></span><span class="sb-txt">Mental health support · right now</span></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);font-weight:300;color:#fff;margin-bottom:16px">If you need help,<br>start here.</h2>
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.78);margin-bottom:28px">You don't need to have the right words. You don't need to figure it out alone.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
+        <a href="javascript:void(0)" class="btn-red" onclick="nav('support');return false;">Find Support Now</a>
+        <a href="javascript:void(0)" style="display:inline-flex;align-items:center;font-family:var(--sans);font-size:13px;font-weight:500;color:rgba(255,255,255,.55);background:none;border:1.5px solid rgba(255,255,255,.18);padding:12px 24px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase" onclick="nav('support');return false;">Browse Resources</a>
+      </div>
+      <div class="crisis-block">
+        <div class="cb-head">Crisis lines — call or text now</div>
+        <div class="crisis-grid">
+          <div class="cn"><span class="cn-country">US &amp; Canada</span><span class="cn-number">988</span><span class="cn-name">Suicide &amp; Crisis Lifeline · 24/7</span></div>
+          <div class="cn"><span class="cn-country">United Kingdom</span><span class="cn-number">116 123</span><span class="cn-name">Samaritans · 24/7</span></div>
+          <div class="cn"><span class="cn-country">Australia</span><span class="cn-number">13 11 14</span><span class="cn-name">Lifeline · 24/7</span></div>
+          <div class="cn"><span class="cn-country">France</span><span class="cn-number">3114</span><span class="cn-name">Numéro national · 24/7</span></div>
+          <div class="cn"><span class="cn-country">Netherlands</span><span class="cn-number">113</span><span class="cn-name">Zelfmoordpreventie · 24/7</span></div>
+          <div class="cn"><span class="cn-country">Ireland</span><span class="cn-number">116 123</span><span class="cn-name">Samaritans · 24/7</span></div>
+        </div>
+        <div class="cn-more">150+ countries → <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a> · <a href="https://iasp.info" target="_blank" rel="noopener">IASP Directory</a></div>
+      </div>
+      <div class="support-legal"><strong>If this is urgent or life-threatening, contact emergency services now.</strong><br>Butterfly Challenge is not a crisis line and does not replace clinical care.</div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing-section" aria-label="Join the movement">
+    <div class="closing-glow" aria-hidden="true"></div>
+    <div class="wrap-sm" style="position:relative;z-index:1">
+      <div class="reveal">
+        <h2 class="closing-h">
+          <span style="font-family:var(--sans);font-size:clamp(42px,6vw,80px);font-weight:700;color:#fff;display:block;line-height:1;letter-spacing:.02em">SHOW UP.</span>
+          <span style="font-family:var(--serif);font-size:clamp(26px,3.8vw,52px);font-weight:300;font-style:italic;color:var(--teal);display:block;line-height:1.1;margin-top:8px">For mental health.</span>
+          <span style="font-family:var(--serif);font-size:clamp(16px,2vw,28px);font-weight:300;color:rgba(255,255,255,.52);display:block;font-style:italic;margin-top:6px">Lift a Billion Hands.</span>
+        </h2>
+        <p class="closing-sub">Nearly 1 billion people are living with a mental health condition.<br>The Butterfly Challenge is the movement that shows up for every one of them.</p>
+        <p style="font-family:var(--serif);font-size:20px;font-style:italic;color:rgba(255,255,255,.62);margin-bottom:48px">For someone you care about.</p>
+        <div class="closing-ctas">
+          <a href="javascript:void(0)" class="btn-primary" onclick="nav('challenge');return false;">Take the Challenge</a>
+          <a href="javascript:void(0)" class="btn-gold" onclick="nav('alliances');return false;">Become a Founding Partner</a>
+          <a href="javascript:void(0)" class="btn-red" onclick="nav('support');return false;">Find Support</a>
+        </div>
+        <div class="closing-sig">One system. One humanity. One heart. One butterfly.</div>
+      </div>
+    </div>
+  </section>
+</div><!-- /home -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: CHALLENGE
+═══════════════════════════════════════════════════════ -->
+<div id="page-challenge" class="page">
+  <div class="challenge-hero">
+    <div class="ch-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="role-tag">The Butterfly Challenge · Global Mental Health Movement</div>
+      <h1 style="margin-bottom:16px">
+        <span style="font-family:var(--sans);font-size:clamp(52px,7vw,96px);font-weight:600;letter-spacing:.02em;color:var(--ink);display:block;line-height:1">SHOW UP.</span>
+        <span style="font-family:var(--serif);font-size:clamp(28px,3.8vw,52px);font-weight:300;font-style:italic;color:var(--teal);display:block;line-height:1.1;margin-top:10px">For mental health.</span>
+      </h1>
+      <p style="font-family:var(--serif);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:36px;border-left:2px solid rgba(160,114,24,.3);padding-left:16px">For someone you care about.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#ch-steps" class="btn-primary">Take the Challenge</a>
+        <a href="javascript:void(0)" class="btn-secondary" onclick="nav('support');return false;">Find Support</a>
+      </div>
+    </div>
+  </div>
+  <section class="sec-warm" aria-label="The Butterfly Sign">
+    <div class="wrap">
+      <div class="two-col-c">
+        <div class="reveal">
+          <div class="sign-frame">
+            <svg width="200" height="160" viewBox="0 0 260 200" fill="none" aria-label="The Butterfly Sign" role="img">
+              <path d="M88 108 Q58 103 44 118 Q28 134 33 153 Q38 170 58 173 Q76 176 88 163 Q100 150 100 132Z" fill="#B8975A" opacity=".8"/>
+              <path d="M88 108 Q86 87 83 74" stroke="#B8975A" stroke-width="11" stroke-linecap="round"/>
+              <path d="M88 108 Q77 90 70 80" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M88 108 Q70 96 62 88" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <path d="M172 108 Q202 103 216 118 Q232 134 227 153 Q222 170 202 173 Q184 176 172 163 Q160 150 160 132Z" fill="#B8975A" opacity=".8"/>
+              <path d="M172 108 Q174 87 177 74" stroke="#B8975A" stroke-width="11" stroke-linecap="round"/>
+              <path d="M172 108 Q183 90 190 80" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M172 108 Q190 96 198 88" stroke="#B8975A" stroke-width="9" stroke-linecap="round"/>
+              <ellipse cx="130" cy="136" rx="15" ry="13" fill="#B8975A" opacity=".6"/>
+              <ellipse cx="76" cy="102" rx="44" ry="28" fill="rgba(11,158,153,.1)" transform="rotate(-18 76 102)"/>
+              <ellipse cx="184" cy="102" rx="44" ry="28" fill="rgba(11,158,153,.1)" transform="rotate(18 184 102)"/>
+            </svg>
+            <div class="sign-label">The Butterfly Sign · For Mental Health</div>
+            <div class="sign-three"><div class="sign-promise">I see you.</div><div class="sign-promise">I care.</div><div class="sign-promise">You are not alone.</div></div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <div class="eyebrow eyebrow-gold">The Butterfly Sign</div>
+          <h2 class="h-xl">Two hands.<br>One signal.<br><em>No words required.</em></h2>
+          <p class="body-lg" style="margin-bottom:16px">The Butterfly Sign is how you show up for mental health when you do not have the words. Anyone can make it. In any language. In any room. Anywhere in the world.</p>
+          <p class="body-md">No diagnosis. No perfect moment. No language barrier. The first universal gesture for mental health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-light" id="ch-steps" aria-label="Challenge steps">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="eyebrow">How it works</div>
+          <h2 class="h-xl">Three steps.<br><em>A billion hands.</em></h2>
+          <p class="body-lg" style="margin-bottom:32px">For mental health. For someone you care about. For the 1 billion people carrying something in silence.</p>
+          <a href="javascript:void(0)" class="btn-primary">Take the Challenge</a>
+        </div>
+        <div class="reveal d1">
+          <div class="steps">
+            <div class="step"><div class="step-n">1</div><div><div class="step-title">Take the Challenge</div><div class="step-body">Make the Butterfly Sign. Complete the Hero Act — revealed live from Miami on April 30. The act that makes mental health visible at scale.</div></div></div>
+            <div class="step"><div class="step-n">2</div><div><div class="step-title">Show the Love</div><div class="step-body">Share the message: I see you. I care. You are not alone. For someone carrying something alone. For mental health.</div></div></div>
+            <div class="step"><div class="step-n">3</div><div><div class="step-title">Lift 3 More</div><div class="step-body">Tag three people you care about. Give them 24 hours. That is how a billion hands rise for mental health.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-dark" style="padding:100px 0">
+    <div class="wrap-sm">
+      <div class="private-prompt" style="background:var(--night2)">
+        <div class="pp-glow"></div>
+        <span class="pp-lbl">Before you post — private, never public</span>
+        <div class="pp-q">"Who are you doing this for?"</div>
+        <div class="pp-body">Hold a name in your mind. You don't have to say it out loud. You just have to mean it. The Butterfly Challenge is not asking people to confess. It is asking them to show up for someone they care about.</div>
+        <div class="pp-soul">I got you.</div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-warm">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;margin-bottom:56px">
+        <div class="eyebrow eyebrow-center">The Human Journey</div>
+        <h2 class="h-xl" style="max-width:600px;margin:0 auto">This movement is for people in <em>every season.</em></h2>
+      </div>
+      <div class="seasons-row reveal d1">
+        <div class="season-card"><div class="sc-emoji">🥚</div><div class="sc-name">Egg</div><div class="sc-desc">We all begin somewhere.</div></div>
+        <div class="season-card"><div class="sc-emoji">🐛</div><div class="sc-name">Caterpillar</div><div class="sc-desc">We all grow through effort and time.</div></div>
+        <div class="season-card"><div class="sc-emoji">🫙</div><div class="sc-name">Cocoon</div><div class="sc-desc">We all have seasons of retreat and inner change.</div></div>
+        <div class="season-card"><div class="sc-emoji">✨</div><div class="sc-name">Metamorphosis</div><div class="sc-desc">We all can change.</div></div>
+        <div class="season-card active-season"><div class="sc-emoji">🦋</div><div class="sc-name sc-name-light">Butterfly</div><div class="sc-desc sc-desc-light">We all can rise, connect, and pass something good forward.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: CULTURE (renamed from Community)
+═══════════════════════════════════════════════════════ -->
+<div id="page-culture" class="page">
+  <div class="culture-hero">
+    <div class="wrap">
+      <div class="eyebrow">Culture</div>
+      <h1 class="h-display" style="max-width:900px;margin-bottom:18px">How culture shows up<br>for <em>mental health.</em></h1>
+      <p class="body-lg" style="max-width:560px">Every part of culture has a role. Tap any card to see the full brief — no navigation needed, everything opens here.</p>
+    </div>
+  </div>
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="eyebrow" style="margin-bottom:18px">11 Culture Roles</div>
+      <div class="axiom-grid reveal" style="margin-bottom:40px">
+        <div class="axiom"><div class="ax-role">Creators</div><div class="ax-line">ignite it.</div></div>
+        <div class="axiom"><div class="ax-role">Celebrities</div><div class="ax-line">give it consequence.</div></div>
+        <div class="axiom"><div class="ax-role">Sports</div><div class="ax-line">give it strength.</div></div>
+        <div class="axiom"><div class="ax-role">Music</div><div class="ax-line">give it sound.</div></div>
+        <div class="axiom"><div class="ax-role">Dance</div><div class="ax-line">give it motion.</div></div>
+        <div class="axiom"><div class="ax-role">Film</div><div class="ax-line">give it story.</div></div>
+        <div class="axiom"><div class="ax-role">Fashion</div><div class="ax-line">give it statement.</div></div>
+        <div class="axiom"><div class="ax-role">Art</div><div class="ax-line">give it image.</div></div>
+        <div class="axiom"><div class="ax-role">Faith & Community</div><div class="ax-line">give it trust.</div></div>
+        <div class="axiom"><div class="ax-role">Gaming & Esports</div><div class="ax-line">give it world.</div></div>
+        <div class="axiom"><div class="ax-role">Podcast</div><div class="ax-line">give it voice.</div></div>
+        <div class="axiom"><div class="ax-role">Everyone</div><div class="ax-line">gives it humanity.</div></div>
+      </div>
+      <div class="culture-grid reveal" id="culture-page-grid">
+        <div class="culture-card" data-role="creators" onclick="toggleCultureCard(this,'creators','page')"><span class="cc-icon">🎥</span><div class="cc-name">Creators</div><div class="cc-role-tag">Ignition</div><div class="cc-line">Every cultural moment started with one creator.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="celebrities" onclick="toggleCultureCard(this,'celebrities','page')"><span class="cc-icon">⭐</span><div class="cc-name">Celebrities</div><div class="cc-role-tag">Consequence</div><div class="cc-line">The celebrities who move first help define how the world learns to show up.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="sports" onclick="toggleCultureCard(this,'sports','page')"><span class="cc-icon">🏆</span><div class="cc-name">Sports</div><div class="cc-role-tag">Strength</div><div class="cc-line">Showing up is strength.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="music" onclick="toggleCultureCard(this,'music','page')"><span class="cc-icon">🎵</span><div class="cc-name">Music</div><div class="cc-role-tag">Sound</div><div class="cc-line">This is how a movement finds its sound.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="dance" onclick="toggleCultureCard(this,'dance','page')"><span class="cc-icon">💃</span><div class="cc-name">Dance</div><div class="cc-role-tag">Motion</div><div class="cc-line">This is how a movement learns to move.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="film" onclick="toggleCultureCard(this,'film','page')"><span class="cc-icon">🎬</span><div class="cc-name">Film</div><div class="cc-role-tag">Story</div><div class="cc-line">This is how a movement finds its story.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="fashion" onclick="toggleCultureCard(this,'fashion','page')"><span class="cc-icon">👗</span><div class="cc-name">Fashion</div><div class="cc-role-tag">Statement</div><div class="cc-line">This is how a movement becomes a statement.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="art" onclick="toggleCultureCard(this,'art','page')"><span class="cc-icon">🎨</span><div class="cc-name">Art</div><div class="cc-role-tag">Image</div><div class="cc-line">This is how a movement finds its image.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="faith" onclick="toggleCultureCard(this,'faith','page')"><span class="cc-icon">🕊</span><div class="cc-name">Faith & Community</div><div class="cc-role-tag">Trust</div><div class="cc-line">This is how a movement earns the world's trust.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="gaming" onclick="toggleCultureCard(this,'gaming','page')"><span class="cc-icon">🎮</span><div class="cc-name">Gaming & Esports</div><div class="cc-role-tag">World</div><div class="cc-line">This is how a movement enters the worlds people already live in.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+        <div class="culture-card" data-role="podcast" onclick="toggleCultureCard(this,'podcast','page')"><span class="cc-icon">🎙</span><div class="cc-name">Podcast</div><div class="cc-role-tag">Voice</div><div class="cc-line">This is how a movement finds its voice.</div><div class="cc-cta">See the role <span class="cc-arrow">↓</span></div></div>
+      </div>
+      <div class="expand-panel" id="expand-culture-page"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: ALLIANCES (condensed — 6 cards + briefs inline)
+═══════════════════════════════════════════════════════ -->
+<div id="page-alliances" class="page">
+  <div style="background:var(--paper);padding:100px 0 60px;border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="eyebrow eyebrow-gold">Butterfly Alliances</div>
+      <h1 class="h-display" style="max-width:820px;margin-bottom:20px">A billion hands need more than a challenge.<br><em>They need a road.</em></h1>
+      <p class="body-lg" style="max-width:600px;margin-bottom:0">Six founding alliance categories. Each one a different road the movement travels. We are not asking you to become the movement — we are inviting you to help it travel through the world you already serve.</p>
+    </div>
+  </div>
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="alliance-grid reveal" id="alliance-page-grid">
+        <div class="alliance-card" data-al="platform" onclick="toggleAllianceCard(this,'platform','page')"><div class="ac-cat">PA-2026-001</div><span style="font-size:22px;margin-bottom:10px;display:block">📱</span><div class="ac-name">Platforms</div><div class="ac-line">This is how a movement travels.</div><div class="ac-who">TikTok · YouTube · Meta · Instagram · X · Snapchat · Discord · Twitch · LinkedIn</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="care" onclick="toggleAllianceCard(this,'care','page')"><div class="ac-cat">CA-2026-002</div><span style="font-size:22px;margin-bottom:10px;display:block">💚</span><div class="ac-name">Care & Community</div><div class="ac-line">This is how a movement joins the people already showing up.</div><div class="ac-who">Mental health organizations · NGOs · Charities · Humanitarian groups</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="media" onclick="toggleAllianceCard(this,'media','page')"><div class="ac-cat">MA-2026-003</div><span style="font-size:22px;margin-bottom:10px;display:block">📡</span><div class="ac-name">Media</div><div class="ac-line">This is how a movement is witnessed.</div><div class="ac-who">Broadcasters · TV networks · Publishers · Press · Documentary · Podcast networks</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="business" onclick="toggleAllianceCard(this,'business','page')"><div class="ac-cat">BA-2026-004</div><span style="font-size:22px;margin-bottom:10px;display:block">🏢</span><div class="ac-name">Business</div><div class="ac-line">This is how a movement becomes part of how business shows up.</div><div class="ac-who">Brands · Employers · Companies · CSR teams · Corporate foundations</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="education" onclick="toggleAllianceCard(this,'education','page')"><div class="ac-cat">EA-2026-005</div><span style="font-size:22px;margin-bottom:10px;display:block">🎓</span><div class="ac-name">Education</div><div class="ac-line">This is how a movement reaches the next generation.</div><div class="ac-who">Schools · Universities · Student networks · Youth organizations</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+        <div class="alliance-card" data-al="connectivity" onclick="toggleAllianceCard(this,'connectivity','page')"><div class="ac-cat">CNA-2026-006</div><span style="font-size:22px;margin-bottom:10px;display:block">🌐</span><div class="ac-name">Connectivity</div><div class="ac-line">This is how a movement reaches every hand.</div><div class="ac-who">Telcos · Mobile carriers · SMS platforms · Device ecosystems</div><div class="ac-cta">See brief <span class="ac-arrow">↓</span></div></div>
+      </div>
+      <div class="expand-panel-al" id="expand-alliance-page"></div>
+      <div style="margin-top:48px;background:var(--teal-ll);border:1px solid rgba(11,158,153,.2);border-radius:var(--r);padding:22px 26px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:7px">Non-Negotiable — All Six Alliance Categories</div>
+        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--ink-75)">Safety before scale. Always. Every official alliance partner integrates one-tap access to verified mental health support before any activation launches. Not a suggestion. The condition of partnership.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: IMPACT
+═══════════════════════════════════════════════════════ -->
+<div id="page-impact" class="page">
+  <div style="background:var(--paper);padding:100px 0 60px;border-bottom:1px solid var(--border)">
+    <div class="wrap"><div class="eyebrow">Impact</div><h1 class="h-display" style="margin-bottom:16px">The proof is<br>in the movement.</h1><p class="body-lg" style="max-width:520px">Only verified numbers. Targets clearly labeled. Every claim sourced. Updated as the movement grows.</p></div>
+  </div>
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="impact-grid reveal">
+        <div class="impact-cell target"><div class="impact-n">A Billion</div><div class="impact-lbl">Hands raised for mental health globally</div><div class="impact-note">Goal · Butterfly Month 2026</div></div>
+        <div class="impact-cell"><div class="impact-n">13+</div><div class="impact-lbl">Cultural surfaces activated</div><div class="impact-note">May 2026 · Butterfly Month confirmed</div></div>
+        <div class="impact-cell"><div class="impact-n">195</div><div class="impact-lbl">Countries built for</div><div class="impact-note">No language barriers. No barriers.</div></div>
+        <div class="impact-cell"><div class="impact-n">Apr 30</div><div class="impact-lbl">Ignition date · Miami</div><div class="impact-note">Where it begins</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-30);font-style:italic;margin-bottom:56px">Cells marked GOAL are targets. All actuals published post-launch.</div>
+      <div class="two-col">
+        <div class="reveal">
+          <div class="eyebrow">Why this matters</div>
+          <h2 class="h-xl" style="max-width:600px">The mission is to lift a billion hands. <em>The reason is one person.</em></h2>
+          <div style="margin-top:28px"><div class="stat-n-wrap"><span class="stat-num">1</span><span class="stat-word"> billion</span></div><div class="stat-label">people living with a mental health condition globally</div><div class="stat-src" style="margin-bottom:20px">World Health Organization (WHO), 2023</div><div class="stat-n-wrap"><span class="stat-num">11</span><span class="stat-word"> years</span></div><div class="stat-label">average delay between first symptoms and receiving help</div><div class="stat-src" style="margin-bottom:20px">WHO / Kessler et al., peer-reviewed</div><div class="stat-n-wrap"><span class="stat-num">$5</span><span class="stat-word"> trillion</span></div><div class="stat-label">projected annual economic loss from untreated mental health</div><div class="stat-src">WEF / Lancet Commission · Projected figure for 2030</div></div>
+        </div>
+        <div class="reveal d1">
+          <blockquote class="quote" style="margin-bottom:28px;font-size:clamp(18px,2vw,24px)">"More hands raised for mental health than people hurting alone. More visible care than silent struggle. This is not about counting pain. It is about outnumbering it with care."</blockquote>
+          <p class="body-md">Because when people feel down — the world should know how to lift.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: SUPPORT
+═══════════════════════════════════════════════════════ -->
+<div id="page-support" class="page">
+  <div style="background:var(--night2);padding:100px 0 70px;border-bottom:4px solid var(--teal)">
+    <div class="wrap-sm">
+      <div class="support-badge"><span class="sb-dot"></span><span class="sb-txt">If you need help now</span></div>
+      <h1 style="font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:300;color:#fff;margin-bottom:18px;line-height:1.1">Mental health support,<br>right now.</h1>
+      <p style="font-size:16px;font-weight:300;color:rgba(255,255,255,.78);margin-bottom:32px">You do not need to have the right words. You do not need to figure it out alone.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://findahelpline.com" target="_blank" rel="noopener" class="btn-red">Find a Helpline Globally</a>
+        <a href="https://iasp.info" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;font-family:var(--sans);font-size:13px;font-weight:500;color:rgba(255,255,255,.55);background:none;border:1.5px solid rgba(255,255,255,.18);padding:12px 24px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase">IASP Directory</a>
+      </div>
+    </div>
+  </div>
+  <section class="sec-light">
+    <div class="wrap">
+      <h2 class="h-lg" style="margin-bottom:8px">Crisis helplines — verified 2025–2026</h2>
+      <p class="body-md" style="margin-bottom:40px;max-width:520px">Call or text these numbers now. All confirmed operational. If your country isn't listed, visit findahelpline.com for 150+ countries.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:32px">
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">United States &amp; Canada</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">988</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">988 Suicide &amp; Crisis Lifeline</div><div class="body-sm">Call or text 988 · 24/7 · Free · Confidential</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">United Kingdom</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">116 123</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">Samaritans</div><div class="body-sm">Free from any phone · 24/7</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">Australia</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">13 11 14</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">Lifeline Australia</div><div class="body-sm">Call or text · 24/7 · Free</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">France</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">3114</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">Numéro national</div><div class="body-sm">Free from any phone · 24/7</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">Netherlands</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">113</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">113 Zelfmoordpreventie</div><div class="body-sm">Free · Also 0800-0113 · 24/7</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">India</div><div style="font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:4px">+91 9999 666 555</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">Vandrevala Foundation</div><div class="body-sm">Call or WhatsApp · 24/7 · Multiple languages</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">Brazil</div><div style="font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);margin-bottom:4px">188</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">CVV</div><div class="body-sm">Free · 24/7 · cvv.org.br</div></div>
+        <div class="gov-block"><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">South Africa</div><div style="font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:4px">0800 567 567</div><div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px">SADAG Crisis Line</div><div class="body-sm">Free · 24/7 · sadag.org</div></div>
+        <div class="gov-block" style="background:var(--teal);border-color:var(--teal)">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(9,13,13,.5);margin-bottom:10px">150+ countries</div>
+          <div style="font-family:var(--serif);font-size:20px;font-weight:500;color:var(--night);margin-bottom:10px">Don't see your country?</div>
+          <p style="font-size:13px;color:rgba(9,13,13,.65);margin-bottom:16px">FindAHelpline.com covers verified services in 150+ countries, searchable by language and topic.</p>
+          <a href="https://findahelpline.com" target="_blank" rel="noopener" class="ask-btn">FindAHelpline.com →</a>
+        </div>
+      </div>
+      <div class="support-legal"><strong>If this is urgent or life-threatening, contact local emergency services now.</strong><br>Butterfly Challenge and One Humanity Foundation are not crisis lines and do not replace emergency or clinical care. All helplines listed are independent organizations. Information verified 2025–2026.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: GOVERNANCE
+═══════════════════════════════════════════════════════ -->
+<div id="page-governance" class="page">
+  <div style="background:var(--paper);padding:100px 0 60px;border-bottom:1px solid var(--border)">
+    <div class="wrap"><div class="eyebrow">Governance &amp; Transparency</div><h1 class="h-display" style="max-width:820px;margin-bottom:20px">Serious mission.<br><em>Serious stewardship.</em></h1><p class="body-lg" style="max-width:580px">We build with dignity, plain language, and accountability. We separate what is live from what is still being built. Every dollar has a destination.</p></div>
+  </div>
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="reveal">
+          <div class="eyebrow">The Foundation</div>
+          <h2 class="h-xl">One Humanity Foundation</h2>
+          <p class="body-lg" style="margin-bottom:28px">One Humanity Foundation is the U.S. 501(c)(3) nonprofit stewarding the Butterfly Movement during its founding period.</p>
+          <div class="proof-list">
+            <div class="proof-item"><div class="pi-icon">🏛</div><div><div class="pi-title">501(c)(3) registered</div><div class="pi-body">U.S. public benefit nonprofit. Auditable from Day 1. Independent governance board.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">🛡</div><div><div class="pi-title">Safety Officer — unilateral veto</div><div class="pi-body">Cannot be overruled by anyone. Cannot be a PR firm. Convenes within 12 hours of any incident.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">⚖️</div><div><div class="pi-title">Editorial independence</div><div class="pi-body">No sponsor has editorial control. Ever. Commercial and charitable funding separated.</div></div></div>
+            <div class="proof-item"><div class="pi-icon">🌍</div><div><div class="pi-title">Political neutrality</div><div class="pi-body">Modeled on the International Red Cross. 195 countries. Universal. No co-branding with any identity-specific observance.</div></div></div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <div class="trust-law" style="margin-bottom:20px">
+            <span class="tl-lbl">The Trust Law — binding, not advisory</span>
+            <div class="tl-formula">Money In<br>↓<br>Money Out<br>↓<br>Programs<br>↓<br>Outcomes</div>
+          </div>
+          <p class="body-md">Donors, partners, and the public can always understand what is real, what is next, and how support is used. Published every Monday 09:00 UTC. No exceptions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-warm">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:48px"><div class="eyebrow">Standards</div><h2 class="h-xl">The non-negotiables.</h2></div>
+      <div class="three-col reveal d1">
+        <div class="gov-block"><div class="gov-title">IASP Safe Messaging</div><div class="gov-body">Every piece of content — public or private — is governed by IASP safe messaging guidelines. No exceptions.</div></div>
+        <div class="gov-block"><div class="gov-title">No Donation Required</div><div class="gov-body">Participation in the Butterfly Challenge is free. Always. No barrier to showing up.</div></div>
+        <div class="gov-block"><div class="gov-title">Dignity-First Design</div><div class="gov-body">Non-diagnostic. No stigma framing. No fear marketing. No clinical language on public-facing surfaces.</div></div>
+        <div class="gov-block"><div class="gov-title">Human Routing Map</div><div class="gov-body">Zero gaps before any activation launches. The single point of failure — identified, protected, monitored.</div></div>
+        <div class="gov-block"><div class="gov-title">Safety Before Scale</div><div class="gov-body">No platform activation launches without BOS Help Button integrated. No exceptions.</div></div>
+        <div class="gov-block"><div class="gov-title">Best Ideas Only</div><div class="gov-body">Every major decision runs through the BIO Protocol evaluation standard. Best idea always wins.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec-dark">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:48px"><div class="eyebrow" style="color:var(--teal)">Legal Framework</div><h2 class="h-xl" style="color:#fff">Nine legal streams.<br><em>All engaged before launch.</em></h2></div>
+      <div class="legal-grid reveal d1">
+        <div class="gov-block-dark"><div class="gov-title-light">Prize Law</div><div class="gov-body-dark">Challenge mechanics, winner selection, prize distribution.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">IP &amp; Trademark</div><div class="gov-body-dark">Global trademark registration. USPTO + Madrid Protocol.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Data Protection</div><div class="gov-body-dark">GDPR, CCPA, COPPA, PIPL compliance across all markets.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Platform Liability</div><div class="gov-body-dark">UGC, moderation, amplification standards.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Nonprofit &amp; Governance</div><div class="gov-body-dark">501(c)(3) maintenance, global filing compliance.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Clinical Safety</div><div class="gov-body-dark">IASP compliance review on all public-facing content.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Ambassador Contracts</div><div class="gov-body-dark">Creator, celebrity, and institutional partner agreements.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Insurance &amp; Risk</div><div class="gov-body-dark">Event coverage, D&amp;O, general liability.</div></div>
+        <div class="gov-block-dark"><div class="gov-title-light">Tax / Cross-Border</div><div class="gov-body-dark">Multi-jurisdiction tax, AML, cross-border fund flows.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: TOOLKIT
+═══════════════════════════════════════════════════════ -->
+<div id="page-toolkit" class="page">
+  <div class="tk-hero">
+    <div class="wrap">
+      <div class="eyebrow">Toolkit</div>
+      <h1 class="h-display" style="max-width:820px;margin-bottom:20px">Everything you need<br>to <em>show up.</em></h1>
+      <p class="body-lg" style="max-width:600px;margin-bottom:32px">Free assets, templates, and brand resources for challenge participants, culture carriers, and alliance partners. Download. Use. Make care visible.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="javascript:void(0)" class="btn-primary">Download Full Kit</a>
+        <a href="javascript:void(0)" class="btn-secondary" onclick="nav('alliances');return false;">Become a Founding Partner</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO USE -->
+  <section class="sec-warm" style="padding:60px 0">
+    <div class="wrap">
+      <div class="tk-usage-grid reveal">
+        <div class="tk-usage-item"><div class="tku-label">For individuals</div><div class="tku-title">Take the Challenge</div><div class="tku-body">Use the social templates, caption library, and sign guide to participate and lift 3 more.</div></div>
+        <div class="tk-usage-item"><div class="tku-label">For creators & talent</div><div class="tku-title">Ignite the movement</div><div class="tku-body">Use the Creator Kit — briefing deck, caption templates, hashtags, and high-res assets.</div></div>
+        <div class="tk-usage-item"><div class="tku-label">For alliance partners</div><div class="tku-title">Activate your audience</div><div class="tku-body">Use the Partner Kit — Butterfly Month activation guide, Butterfly Drop assets, pledge certificate.</div></div>
+        <div class="tk-usage-item"><div class="tku-label">For media</div><div class="tku-title">Cover the movement</div><div class="tku-body">Use the Press Kit — fact sheet, approved quotes, high-res photography, B-roll request form.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLKIT ASSETS -->
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Challenge Assets</div>
+        <h2 class="h-xl">For everyone. <em>Free. Always.</em></h2>
+        <p class="body-md" style="max-width:520px;margin-top:12px">Every asset below is free to download and use for the Butterfly Challenge. No account required. No donation required. Show up.</p>
+      </div>
+      <div class="tk-grid reveal">
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-teal">
+            <svg width="80" height="64" viewBox="0 0 300 236" fill="none" aria-hidden="true">
+              <path d="M150 128C124 112 68 82 26 57 9 46 5 28 17 15 29 2 52 5 79 21 111 41 138 84 150 128Z" fill="#0B9E99" opacity=".7"/>
+              <path d="M150 128C176 112 232 82 274 57 291 46 295 28 283 15 271 2 248 5 221 21 189 41 162 84 150 128Z" fill="#0B9E99" opacity=".7"/>
+              <path d="M150 128C128 143 84 174 70 200 60 217 69 230 85 230 103 230 129 212 145 188 152 176 154 152 150 128Z" fill="#0B9E99" opacity=".35"/>
+              <path d="M150 128C172 143 216 174 230 200 240 217 231 230 215 230 197 230 171 212 155 188 148 176 146 152 150 128Z" fill="#0B9E99" opacity=".35"/>
+            </svg>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">SVG · PNG · PDF</div>
+            <div class="tk-name">Butterfly Logo Pack</div>
+            <div class="tk-desc">Full logo suite in all formats and colorways — teal, white, black, and reversed. Includes the Butterfly Mark, wordmark, and combination lockup. Clear space rules included.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-teal" style="background:linear-gradient(135deg,rgba(11,158,153,.08) 0%,rgba(160,114,24,.08) 100%)">
+            <div style="text-align:center">
+              <div style="font-family:var(--sans);font-size:22px;font-weight:700;color:var(--ink);letter-spacing:.02em">SHOW UP.</div>
+              <div style="font-family:var(--serif);font-size:12px;font-style:italic;color:var(--teal)">for mental health.</div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">JPG · PNG · 9:16 · 1:1 · 16:9</div>
+            <div class="tk-name">Social Post Templates</div>
+            <div class="tk-desc">Ready-to-post templates for Instagram, TikTok, Twitter/X, Facebook, and LinkedIn. All three challenge steps covered. Available in all aspect ratios.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-ink">
+            <svg width="80" height="64" viewBox="0 0 260 200" fill="none" aria-hidden="true">
+              <path d="M88 108 Q58 103 44 118 Q28 134 33 153 Q38 170 58 173 Q76 176 88 163 Q100 150 100 132Z" fill="#B8975A" opacity=".7"/>
+              <path d="M88 108 Q86 87 83 74" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M88 108 Q77 90 70 80" stroke="#B8975A" stroke-width="8" stroke-linecap="round"/>
+              <path d="M172 108 Q202 103 216 118 Q232 134 227 153 Q222 170 202 173 Q184 176 172 163 Q160 150 160 132Z" fill="#B8975A" opacity=".7"/>
+              <path d="M172 108 Q174 87 177 74" stroke="#B8975A" stroke-width="10" stroke-linecap="round"/>
+              <path d="M172 108 Q183 90 190 80" stroke="#B8975A" stroke-width="8" stroke-linecap="round"/>
+              <ellipse cx="130" cy="136" rx="12" ry="10" fill="#B8975A" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PDF · A4 · Letter</div>
+            <div class="tk-name">Sign Guide</div>
+            <div class="tk-desc">A step-by-step visual guide to making the Butterfly Sign. Printable. Shareable. Designed for classrooms, workplaces, faith communities, and events. Available in 12 languages.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-gold">
+            <div style="text-align:center;padding:0 20px">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Caption</div>
+              <div style="font-family:var(--serif);font-size:13px;font-style:italic;color:var(--ink-75);line-height:1.5">"I see you. I care. You are not alone. I'm showing up for someone I care about. Take the Challenge. Show the Love. Lift 3 More."</div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">TXT · PDF</div>
+            <div class="tk-name">Caption Library</div>
+            <div class="tk-desc">50 approved captions for the Butterfly Challenge. Organized by role — individual, creator, athlete, faith leader, business. All IASP-compliant. All using the locked language.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-teal" style="background:linear-gradient(135deg,rgba(11,158,153,.06) 0%,rgba(11,158,153,.12) 100%)">
+            <div style="width:120px;height:120px;background:var(--warm);border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.08)">
+              <div style="text-align:center">
+                <div style="font-size:28px;margin-bottom:4px">🦋</div>
+                <div style="font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)">Partner</div>
+              </div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PNG · SVG · Print-ready PDF</div>
+            <div class="tk-name">Brand Badge</div>
+            <div class="tk-desc">Official "Butterfly Challenge Partner" badge for websites, email signatures, storefronts, and printed materials. Available for founding partners, care organizations, and business allies.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-ink" style="background:linear-gradient(135deg,rgba(17,17,17,.04) 0%,rgba(17,17,17,.1) 100%)">
+            <div style="width:100px;aspect-ratio:2/3;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(11,158,153,.25) 0%,transparent 65%)"></div>
+              <div style="text-align:center;position:relative">
+                <div style="font-size:18px;margin-bottom:4px">🦋</div>
+                <div style="font-size:7px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)">Show Up</div>
+              </div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PDF · A2 · A4 · US Letter</div>
+            <div class="tk-name">Poster & Storefront Asset</div>
+            <div class="tk-desc">Print-ready poster for schools, businesses, places of worship, gyms, and public spaces. Available in three sizes. Designed for high visibility. SHOW UP. For mental health.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-gold">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="width:52px;height:52px;border-radius:50%;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:20px">🦋</div>
+              <svg width="80" height="80" viewBox="0 0 100 100" aria-hidden="true">
+                <rect width="100" height="100" rx="8" fill="var(--warm)"/>
+                <path d="M20 50 L80 50 M50 20 L50 80" stroke="var(--border)" stroke-width="2"/>
+                <rect x="35" y="35" width="30" height="30" rx="3" fill="var(--teal)" opacity=".8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PNG · SVG · Print PDF</div>
+            <div class="tk-name">QR Code Assets</div>
+            <div class="tk-desc">Branded QR codes linking to the Butterfly Challenge. For print materials, events, product packaging, and digital surfaces. Pre-styled with Butterfly mark overlay.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-teal">
+            <div style="text-align:center;padding:0 20px">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:8px">Creator Brief</div>
+              <div style="font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-75)">"Every cultural moment started with one creator."</div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PDF</div>
+            <div class="tk-name">Creator Kit</div>
+            <div class="tk-desc">The full briefing package for creators — role brief, approved language, caption templates, challenge mechanics, hashtag guide, and the founding invitation. Everything needed to show up and move culture.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+        <div class="tk-card">
+          <div class="tk-thumb tk-thumb-gold">
+            <div style="text-align:center;padding:0 20px">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Partner Kit</div>
+              <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:var(--ink-75)">"Sign. Show. Activate."</div>
+            </div>
+          </div>
+          <div class="tk-body">
+            <div class="tk-format">PDF · ZIP</div>
+            <div class="tk-name">Founding Partner Kit</div>
+            <div class="tk-desc">The complete activation package for alliance partners — partner pledge, Butterfly Month calendar guide, Butterfly Drop assets, employee activation toolkit, and brand badge. For organizations ready to show up at scale.</div>
+            <a href="javascript:void(0)" class="tk-btn-solid">Download →</a>
+          </div>
+        </div>
+
+      </div><!-- /tk-grid -->
+
+      <!-- USAGE RULES -->
+      <div class="reveal" style="margin-bottom:36px">
+        <div class="eyebrow">Brand Standards</div>
+        <h2 class="h-xl">How to use the Butterfly mark.</h2>
+        <p class="body-md" style="max-width:520px;margin-top:12px">The Butterfly mark and wordmark are trademarks of One Humanity Foundation. Use them only in connection with genuine Butterfly Challenge participation.</p>
+      </div>
+      <div class="reveal d1" style="margin-bottom:48px">
+        <div class="brand-rule"><div class="br-swatch" style="background:var(--teal);color:#fff">Teal</div><div><div class="br-name">Butterfly Teal — Primary</div><div class="br-hex">#0B9E99</div><div class="br-use">The movement color. Used for the mark, headlines, accents, and CTAs.</div></div></div>
+        <div class="brand-rule"><div class="br-swatch" style="background:var(--gold);color:#fff">Gold</div><div><div class="br-name">Founding Gold</div><div class="br-hex">#A07218</div><div class="br-use">Reserved for founding partner energy, the human reason, and the private prompt.</div></div></div>
+        <div class="brand-rule"><div class="br-swatch" style="background:var(--ink);color:#fff">Near-Black</div><div><div class="br-name">Ink — Body</div><div class="br-hex">#111111</div><div class="br-use">All body text. Never pure black. Always near-black.</div></div></div>
+        <div class="brand-rule"><div class="br-swatch" style="background:var(--red);color:#fff">Signal Red</div><div><div class="br-name">Safety Red</div><div class="br-hex">#C0392B</div><div class="br-use">Reserved exclusively for Find Support and the crisis rail. Never used decoratively.</div></div></div>
+      </div>
+
+      <div style="background:var(--teal-ll);border:1px solid rgba(11,158,153,.2);border-radius:8px;padding:24px 28px;margin-bottom:32px">
+        <div class="eyebrow" style="margin-bottom:8px">Usage rules</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="reveal">
+          <div><div style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">✓ Permitted</div><div class="body-sm" style="line-height:1.8">Use in connection with genuine challenge participation · Use alongside confirmed alliance partner designation · Use in editorial coverage of the movement · Use in social content taking the challenge</div></div>
+          <div><div style="font-size:13px;font-weight:600;color:var(--red);margin-bottom:6px">✕ Not permitted</div><div class="body-sm" style="line-height:1.8">Use without foundation approval as a commercial endorsement · Modification of the mark · Use on content that violates IASP safe messaging · Use to imply clinical care or diagnostic capability</div></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:48px 0">
+        <p class="body-md" style="margin-bottom:20px">Questions about brand usage or custom asset requests?</p>
+        <a href="javascript:void(0)" class="btn-primary" onclick="nav('press');return false;">Contact the Team</a>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /page-toolkit -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE: PRESS
+═══════════════════════════════════════════════════════ -->
+<div id="page-press" class="page">
+  <div class="press-hero">
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="eyebrow" style="color:var(--teal)">Press & Media</div>
+      <h1 class="h-display" style="color:#fff;max-width:820px;margin-bottom:20px">The founding record.</h1>
+      <p class="body-lg" style="color:rgba(255,255,255,.78);max-width:600px;margin-bottom:36px">Verified assets, approved facts, and access pathways for journalists, broadcasters, and documentary filmmakers covering the Butterfly Challenge.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="javascript:void(0)" class="btn-primary">Download Press Kit</a>
+        <a href="javascript:void(0)" style="display:inline-flex;align-items:center;font-family:var(--sans);font-size:13px;font-weight:500;color:rgba(255,255,255,.72);background:none;border:1.5px solid rgba(255,255,255,.25);padding:12px 24px;border-radius:var(--r);text-decoration:none;letter-spacing:.04em;text-transform:uppercase">Request Founder Briefing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMBARGO NOTICE -->
+  <section style="background:var(--warm);padding:24px 0;border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="embargo-box">
+        <div class="eb-label">Press Notice — April 30, 2026</div>
+        <div class="eb-text">The Hero Act and all related challenge mechanics are embargoed until 9:00 PM ET, April 30, 2026 — the moment of the live reveal at One Night For One Humanity, Queen Miami Beach. All press requests referencing the Hero Act prior to this date will be directed to the embargo briefing track. Contact the press team to request early access under embargo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS KIT DOWNLOADS -->
+  <section class="sec-light">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:48px">
+        <div class="eyebrow">Press Kit</div>
+        <h2 class="h-xl">Everything you need<br>to cover the movement.</h2>
+      </div>
+      <div class="press-grid reveal">
+        <div class="press-card">
+          <div class="pc-type">Full Press Kit</div>
+          <div class="pc-name">The Butterfly Challenge — Media Package</div>
+          <div class="pc-desc">The complete press package for broadcasters, publishers, and print media covering the Butterfly Challenge launch and Butterfly Month.</div>
+          <div class="pc-includes">
+            <div class="pc-inc-item">Verified fact sheet with all sourced statistics</div>
+            <div class="pc-inc-item">Movement timeline and key dates</div>
+            <div class="pc-inc-item">Approved founder and governance quotes</div>
+            <div class="pc-inc-item">High-resolution photography (mark, sign, event)</div>
+            <div class="pc-inc-item">B-roll and motion assets request form</div>
+            <div class="pc-inc-item">One Humanity Foundation 501(c)(3) documentation</div>
+          </div>
+          <a href="javascript:void(0)" class="btn-primary">Download Press Kit</a>
+        </div>
+
+        <div class="press-card">
+          <div class="pc-type">IASP Media Guide</div>
+          <div class="pc-name">Covering Mental Health Movements Responsibly</div>
+          <div class="pc-desc">For all journalists and broadcasters covering the Butterfly Challenge — the IASP safe messaging guidelines that govern all content produced by the movement, and recommendations for editorial coverage.</div>
+          <div class="pc-includes">
+            <div class="pc-inc-item">IASP safe messaging summary for editors</div>
+            <div class="pc-inc-item">Language approved and language to avoid</div>
+            <div class="pc-inc-item">Crisis resource integration guidance</div>
+            <div class="pc-inc-item">Interview and framing recommendations</div>
+          </div>
+          <a href="javascript:void(0)" class="btn-secondary">Download IASP Guide</a>
+        </div>
+
+        <div class="press-card">
+          <div class="pc-type">Documentary & Long-Form</div>
+          <div class="pc-name">Founding Moment Access — April 30, Miami</div>
+          <div class="pc-desc">A limited number of media partners will receive documentary-level access to One Night For One Humanity — the founding event where the Hero Act is revealed live. Applications are reviewed by the press team.</div>
+          <div class="pc-includes">
+            <div class="pc-inc-item">Event access and credential pathway</div>
+            <div class="pc-inc-item">B-roll and interview scheduling</div>
+            <div class="pc-inc-item">Post-event follow access for Butterfly Month coverage</div>
+            <div class="pc-inc-item">IASP compliance review required before publication</div>
+          </div>
+          <a href="javascript:void(0)" class="btn-secondary">Apply for Access</a>
+        </div>
+
+        <div class="press-card">
+          <div class="pc-type">Founder Briefing</div>
+          <div class="pc-name">Off the Record & On the Record Sessions</div>
+          <div class="pc-desc">Briefing sessions with the founding team are available for journalists seeking background on the movement architecture, institutional strategy, and the founding story. Available by request.</div>
+          <div class="pc-includes">
+            <div class="pc-inc-item">Background briefing — no attribution required</div>
+            <div class="pc-inc-item">On the record interview — approved quote review</div>
+            <div class="pc-inc-item">Governance and transparency deep-dive available</div>
+            <div class="pc-inc-item">All requests responded to within 48 hours</div>
+          </div>
+          <a href="javascript:void(0)" class="btn-secondary">Request Briefing</a>
+        </div>
+      </div>
+
+      <!-- FACT SHEET -->
+      <div class="reveal" style="margin-bottom:36px">
+        <div class="eyebrow">Verified Fact Sheet</div>
+        <h2 class="h-xl">What is verified.<br><em>What is sourced.</em></h2>
+        <p class="body-md" style="max-width:520px;margin-top:12px">All statistics cited in coverage of the Butterfly Challenge must use the sourcing below. No rounding beyond what is specified. No paraphrasing the source citations.</p>
+      </div>
+      <div class="fact-sheet reveal d1" style="margin-bottom:32px">
+        <div class="fs-row"><div class="fs-key">Movement Name</div><div class="fs-val">Butterfly Challenge · Butterfly Movement</div></div>
+        <div class="fs-row"><div class="fs-key">Steward</div><div class="fs-val">One Humanity Foundation — U.S. 501(c)(3) nonprofit</div></div>
+        <div class="fs-row"><div class="fs-key">Founder</div><div class="fs-val">Evan Klassen — One Humanity Foundation</div></div>
+        <div class="fs-row"><div class="fs-key">Ignition Event</div><div class="fs-val">One Night For One Humanity · April 30, 2026<br>Queen Miami Beach · Miami Grand Prix Weekend</div></div>
+        <div class="fs-row"><div class="fs-key">Butterfly Month</div><div class="fs-val">Every May — permanent annual activation</div></div>
+        <div class="fs-row"><div class="fs-key">Mission</div><div class="fs-val">Lift a Billion Hands for Mental Health</div></div>
+        <div class="fs-row"><div class="fs-key">Stat — 1 billion</div><div class="fs-val">Nearly 1 billion people living with a mental health condition globally<br><span style="font-size:11px;color:rgba(255,255,255,.45)">Source: World Health Organization (WHO), 2023. Precise figure: 970 million.</span></div></div>
+        <div class="fs-row"><div class="fs-key">Stat — 11 years</div><div class="fs-val">Average delay between first symptoms and receiving help<br><span style="font-size:11px;color:rgba(255,255,255,.45)">Source: WHO / Kessler et al., peer-reviewed</span></div></div>
+        <div class="fs-row"><div class="fs-key">Stat — $5 trillion</div><div class="fs-val">Projected annual economic loss from untreated mental health — 2030<br><span style="font-size:11px;color:rgba(255,255,255,.45)">Source: WEF / Lancet Commission. Projected figure. Not current cost.</span></div></div>
+        <div class="fs-row"><div class="fs-key">Challenge mechanic</div><div class="fs-val">Take the Challenge. Show the Love. Lift 3 More.</div></div>
+        <div class="fs-row"><div class="fs-key">Hero Act</div><div class="fs-val">Embargoed until April 30, 2026 — revealed live</div></div>
+        <div class="fs-row"><div class="fs-key">Governance</div><div class="fs-val">Independent board · Safety Officer with unilateral veto<br>Weekly transparency reporting · IASP safe messaging compliance</div></div>
+        <div class="fs-row"><div class="fs-key">IP Counsel</div><div class="fs-val">Kilpatrick Townsend (primary) · Dentons (secondary)</div></div>
+      </div>
+
+      <!-- APPROVED QUOTES -->
+      <div class="reveal" style="margin-bottom:28px">
+        <div class="eyebrow">Approved Quotes</div>
+        <h2 class="h-xl" style="margin-bottom:6px">For use in coverage.</h2>
+        <p class="body-md" style="max-width:480px">These quotes are approved for use without prior verification. All other attributed quotes require approval from the press team before publication.</p>
+      </div>
+      <div class="reveal d1">
+        <div class="quote-card">
+          <div class="qc-quote">"The mission is not to count a billion hands. The mission is to lift them. Because millions of people are carrying something in silence right now, and the movement begins with one person — someone you care about — and ripples outward into the world."</div>
+          <div class="qc-attr">Evan Klassen, Founder — One Humanity Foundation</div>
+        </div>
+        <div class="quote-card">
+          <div class="qc-quote">"The Butterfly Challenge is not asking people to confess. It is asking them to show up for someone they care about. That is the key difference between this movement and everything that came before it."</div>
+          <div class="qc-attr">One Humanity Foundation — Official Movement Statement</div>
+        </div>
+        <div class="quote-card">
+          <div class="qc-quote">"Mental health is the hook. Butterfly is the movement. Show up is the call."</div>
+          <div class="qc-attr">OHF-BCN-2026-001 — Single Source of Truth</div>
+        </div>
+      </div>
+
+      <!-- PRESS CONTACTS -->
+      <div class="reveal" style="margin-bottom:36px">
+        <div class="eyebrow">Press Contacts</div>
+        <h2 class="h-xl">Reach the right person.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="reveal d1">
+        <div class="contact-card">
+          <div class="cc-icon-lg">📰</div>
+          <div class="cc-role">Press & Media Inquiries</div>
+          <div class="cc-person">Press Team</div>
+          <div class="cc-org">One Humanity Foundation</div>
+          <a href="/cdn-cgi/l/email-protection#2e5e5c4b5d5d6e4c5b5a5a4b5c4842574d464f42424b40494b00415c49" class="cc-email"><span class="__cf_email__" data-cfemail="52222037212112302726263720343e2b313a333e3e373c35377c3d2035">[email&#160;protected]</span></a>
+          <div class="cc-note">All media inquiries. Response within 48 hours. Embargoed briefings available on request.</div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon-lg">🎬</div>
+          <div class="cc-role">Documentary & Long-Form</div>
+          <div class="cc-person">Documentary Access</div>
+          <div class="cc-org">One Humanity Foundation</div>
+          <a href="/cdn-cgi/l/email-protection#f99d969a8c949c978d988b80b99b8c8d8d9c8b9f95809a919895959c979e9cd7968b9e" class="cc-email"><span class="__cf_email__" data-cfemail="74101b170119111a0015060d3416010000110612180d171c151818111a13115a1b0613">[email&#160;protected]</span></a>
+          <div class="cc-note">April 30 access requests, B-roll and interview scheduling, long-form access pathway.</div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon-lg">🤝</div>
+          <div class="cc-role">Partnership & Institutional</div>
+          <div class="cc-person">Partnerships Team</div>
+          <div class="cc-org">One Humanity Foundation</div>
+          <a href="/cdn-cgi/l/email-protection#3e4e5f4c4a505b4c4d7e5c4b4a4a5b4c5852475d565f52525b50595b10514c59" class="cc-email"><span class="__cf_email__" data-cfemail="8fffeefdfbe1eafdfccfedfafbfbeafde9e3f6ece7eee3e3eae1e8eaa1e0fde8">[email&#160;protected]</span></a>
+          <div class="cc-note">Alliance partner inquiries, institutional conversations, and founding partner access.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /page-press -->
+
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <a href="javascript:void(0)" onclick="nav('home');return false;" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:12px">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none"><path d="M15 18C10 16 3 12 3 7c0-4 4-4 8 1 1.8 2.2 3.5 5.8 4 10Z" fill="rgba(255,255,255,.35)"/><path d="M15 18c5-2 12-6 12-11 0-4-4-4-8 1-1.8 2.2-3.5 5.8-4 10Z" fill="rgba(255,255,255,.35)"/><path d="M15 18c-3.5 2.2-8 8-6 12 1.5 2 5.5.5 7.5-5Z" fill="rgba(255,255,255,.18)"/><path d="M15 18c3.5 2.2 8 8 6 12-1.5 2-5.5.5-7.5-5Z" fill="rgba(255,255,255,.18)"/></svg>
+          <div class="ft-brand-name">Butterfly Challenge<br><span style="font-size:9px;font-family:var(--sans);font-weight:300;letter-spacing:.16em;text-transform:uppercase;opacity:.45">Lift a Billion Hands</span></div>
+        </a>
+        <p class="ft-tagline">A global movement for mental health. One sign. One message. A billion hands raised for the people who need someone to show up.</p>
+        <div class="ft-legal-note">Stewardship: One Humanity Foundation · U.S. 501(c)(3)</div>
+      </div>
+      <div>
+        <div class="ft-col-head">The Challenge</div>
+        <div class="ft-links">
+          <a href="javascript:void(0)" onclick="nav('challenge');return false;">The Sign</a>
+          <a href="javascript:void(0)" onclick="nav('challenge');return false;">How It Works</a>
+          <a href="javascript:void(0)" onclick="nav('challenge');return false;">The Hero Act</a>
+          <a href="javascript:void(0)" onclick="nav('impact');return false;">Impact</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-head">Get Involved</div>
+        <div class="ft-links">
+          <a href="javascript:void(0)" onclick="nav('culture');return false;">Culture</a>
+          <a href="javascript:void(0)" onclick="nav('alliances');return false;">Alliances</a>
+          <a href="javascript:void(0)" onclick="nav('toolkit');return false;">Toolkit</a>
+          <a href="javascript:void(0)" onclick="nav('press');return false;">Press</a>
+          <a href="javascript:void(0)" class="ft-support-link" onclick="nav('support');return false;">Find Support</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-head">Foundation</div>
+        <div class="ft-links">
+          <a href="javascript:void(0)" onclick="nav('governance');return false;">Governance</a>
+          <a href="javascript:void(0)" onclick="nav('governance');return false;">Transparency</a>
+          <a href="javascript:void(0)">Privacy &amp; Terms</a>
+          <a href="javascript:void(0)">Accessibility</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 One Humanity Foundation · Butterfly Challenge · All rights reserved</div>
+      <div class="ft-soul">One system. One humanity. One heart. One butterfly.</div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── DATA ───────────────────────────────────────────────────────────────
+const ROLES={
+  creators:{icon:'🎥',name:'Creators',roleTag:'Ignition',tagline:'Every cultural moment started with one creator.',why:"Creators don't just post culture. They move it. They make a symbol visible. They make a gesture recognizable. They make a moment feel real. When a creator makes the Butterfly Sign, their audience doesn't see a campaign. They see someone they trust showing up for someone they care about.",ask:'We are inviting a founding group of creators to help ignite the Butterfly Challenge into culture. Not as content. Not as a trend. As a founding moment. One video. Three nominations. Your name on the founding record. Forever.'},
+  celebrities:{icon:'⭐',name:'Celebrities',roleTag:'Consequence',tagline:'The celebrities who move first help define how the world learns to show up.',why:"Some moments need a voice the world already trusts. Celebrities don't just amplify culture. They signal what matters. When a celebrity makes the Butterfly Sign, the world doesn't see a promotion. It sees a person saying something true.",ask:'We are inviting a founding group of celebrities to help launch this. Not as ambassadors. Not as spokespeople. As people who chose to show up when it mattered. One video. Three nominations. Your name recorded as part of the founding moment.'},
+  sports:{icon:'🏆',name:'Sports',roleTag:'Strength',tagline:'Showing up is strength.',why:"Athletes don't just compete. They show the world what strength looks like. When an athlete makes the Butterfly Sign, people don't see weakness. They see courage. They see leadership. They see someone showing up for someone they care about.",ask:'We are inviting a founding group of athletes to help launch this. Not as endorsers. Not as spokespeople. As people who chose to lead when it mattered. Carry the sign. Lift 3 More.'},
+  music:{icon:'🎵',name:'Music',roleTag:'Sound',tagline:'This is how a movement finds its sound.',why:"Some moments need a sound before they have a language. Music reaches where words stop. 1 billion people are carrying something in silence. That silence has never had a sound. Until now.",ask:'We are inviting a founding group of musicians to help give this movement its sound. Not as performers. Not as promoters. As the people who help the world feel it first. One video. Three nominations.'},
+  dance:{icon:'💃',name:'Dance',roleTag:'Motion',tagline:'This is how a movement learns to move.',why:"Some moments need a body before they have a word. Dance doesn't explain feeling. It embodies it. The butterfly is a signal waiting to become motion.",ask:'We are inviting a founding group of dancers and choreographers to help give this movement its motion. The butterfly dance is coming. One gesture. One move. A shared motion the world can carry.'},
+  film:{icon:'🎬',name:'Film',roleTag:'Story',tagline:'This is how a movement finds its story.',why:"Some moments need a story before they become memory. Film shapes how the world sees culture. A single frame can say what a thousand words cannot. 1 billion people carrying something in silence have never been seen clearly. Until now.",ask:'We are inviting a founding group from film to help capture this moment as it happens. April 30. Miami. The story begins there. One story. Told honestly. Seen by the world.'},
+  fashion:{icon:'👗',name:'Fashion',roleTag:'Statement',tagline:'This is how a movement becomes a statement.',why:"Some moments need a statement before they have a speech. Fashion has always known: what people wear is what people mean. When fashion carries the butterfly, the movement is already being worn into the world.",ask:'We are inviting a founding group from fashion to help give this movement its visible language. Not as sponsors. As the people who help the world wear the moment. The Butterfly Gala is coming.'},
+  art:{icon:'🎨',name:'Art',roleTag:'Image',tagline:'This is how a movement finds its image.',why:"Some moments need an image before they have an explanation. Art makes the invisible impossible to ignore. When art carries the butterfly, the movement stops being abstract. It enters the heart through the eyes.",ask:'We are inviting a founding group from art to give this movement its image. Not as decoration. As the people who make the truth visible. Artists. Curators. Exhibitions. Collectors. Patrons.'},
+  faith:{icon:'🕊',name:'Faith & Community',roleTag:'Trust',tagline:'This is how a movement earns the world\'s trust.',why:"Some places the world cannot reach without trust first. Before people turn to a system, they turn to a person. Faith and community go where no campaign can go — into homes, into families, into grief, into ordinary life.",ask:'We are inviting faith leaders and community leaders to carry this movement into the places it cannot reach alone. Not as endorsers. As the people who have always shown up for the ones the world forgot.'},
+  gaming:{icon:'🎮',name:'Gaming & Esports',roleTag:'World',tagline:'This is how a movement enters the worlds people already live in.',why:"3.6 billion players. One of the biggest shared worlds on earth. Gaming is not just entertainment. It is belonging. Gaming communities already know how to show up for each other. This movement gives that a signal the world can see.",ask:'We are inviting a founding group from gaming and esports to help bring this movement into the worlds people already live in. Not as ad inventory. As the players, streamers, teams, and builders who help the world show up together.'},
+  podcast:{icon:'🎙',name:'Podcast',roleTag:'Voice',tagline:'This is how a movement finds its voice.',why:"Some messages are too personal for the feed. They need a voice. A pause. A real conversation. Podcast builds trust. A voice in the ear. A truth carried person to person.",ask:'We are inviting a founding group of hosts and podcast creators to help give this movement its voice. Not as sponsors. As the people who help the world hear it in the moments people listen alone.'}
+};
+
+const ALLIANCES={
+  platform:{name:'Platforms',ref:'PA-2026-001',tagline:'This is how a movement travels.',why:"Platforms are where culture already moves. 5.24 billion people gathering, creating, and sharing every day. A Platform Alliance is a founding commitment to help the signal travel through the places people already live. Not ad inventory. Not a media buy. A partnership that helps the world show up for mental health.",what:['Carry it — feature the challenge and support creator content naturally','Enable it — challenge surfaces, Butterfly Sign filters, one-tap nomination mechanics','Amplify it — Miami reveal live, Butterfly Month editorial every May, profile badge','Protect it — BOS Help Button on every challenge surface before launch'],nonneg:'Safety before scale. Always. BOS Help Button integrated before any activation. Zero gaps. No exceptions.',become:'The platforms that helped a billion hands rise.',partners:'TikTok · YouTube · Meta · Instagram · X · Snapchat · Discord · Twitch · LinkedIn'},
+  care:{name:'Care & Community',ref:'CA-2026-002',tagline:'This is how a movement joins the people already showing up.',why:"You were already there. Before the campaign. Before the challenge. Before anyone called it a movement. You were already in the room with the people who needed help most. A Care Alliance gives your organization a cultural signal the public can understand — so more people find their way to the help you already provide.",what:['Carry it — give your community a shared language for showing up','Enable it — become a verified destination on the Human Routing Map','Amplify it — activate your community during Butterfly Month every May','Protect it — review all content for IASP safe messaging compliance'],nonneg:'The Butterfly Movement does not replace clinical care. It points toward it. Every Care & Community Alliance partner is verified on the Human Routing Map before launch.',become:'The organizations that gave the movement its continuity.',partners:'Mental health organizations · NGOs · Charities · Humanitarian groups · Foundations'},
+  media:{name:'Media',ref:'MA-2026-003',tagline:'This is how a movement is witnessed.',why:"Media does not just cover culture. It decides what the world pays attention to. It turns a moment into memory. A memory into permanent history. A Media Alliance is a commitment to witness the Butterfly Movement as it happens — and help the world understand what it means.",what:['Cover it — report on the movement and founding moment honestly','Feature it — editorial partnership during Butterfly Month every May','Document it — long-form access to the founding moment, April 30, Miami','Protect it — IASP safe messaging compliance in every piece of coverage'],nonneg:'All coverage of the Butterfly Movement follows IASP safe messaging guidelines. Not a restriction — the standard that protects the people this movement was built to serve.',become:'The media that helped the world witness a turning point.',partners:'Broadcasters · TV networks · Publishers · Press · Documentary outlets · Podcast networks'},
+  business:{name:'Business',ref:'BA-2026-004',tagline:'This is how a movement becomes part of how business shows up.',why:"Businesses reach employees, customers, and communities every single day. A Business Alliance brings the butterfly signal into the places where people spend most of their waking lives. Not a campaign. A culture. The $5 trillion annual cost of mental health silence is much of it carried by the workforce.",what:['Carry it — activate the challenge across your workforce and customer base','Enable it — build Butterfly Month into your annual calendar; create a Butterfly Drop','Amplify it — use your platform, stores, and channels to carry the signal','Commit — sign the Butterfly Pledge, adopt Butterfly Sustainability Goals, report annually'],nonneg:'No emotional washing. Recognition without commitment is not alliance. Visibility without action is not belonging.',become:'A business that showed up when it mattered.',partners:'Brands · Employers · Companies · CSR teams · Corporate foundations · Family offices'},
+  education:{name:'Education',ref:'EA-2026-005',tagline:'This is how a movement reaches the next generation.',why:"Schools and universities are where young people spend the most formative years of their lives. They are also where the silence is loudest. Young people 15–24 have the highest rates of mental health conditions globally. Most never receive support. The room where that changes is already built. It is called a school.",what:['Carry it — bring the butterfly sign into classrooms, campuses, and communities','Enable it — integrate the Human Seasons framework into pastoral care and counseling','Amplify it — Butterfly Month as an annual school and campus moment every May','Protect it — BOS Help Button on all student-facing surfaces, always'],nonneg:'No student encounters the Butterfly Challenge without a clear accessible pathway to real support. Always.',become:'The institutions that taught the next generation how to show up.',partners:'Schools · Universities · Student networks · Youth organizations · Learning communities'},
+  connectivity:{name:'Connectivity',ref:'CNA-2026-006',tagline:'This is how a movement reaches every hand.',why:"Not everyone has a smartphone. Not everyone has data. But almost everyone has a phone. A Connectivity Alliance helps the Butterfly Movement reach the people platforms cannot. A billion hands means every hand — not the connected ones. All of them.",what:['Carry it — make the challenge discoverable on every device across your network','Enable it — SMS activation for people without data; device-level visibility','Amplify it — Butterfly Month network moment every May; support the Miami reveal','Protect it — Human Routing Map accessible via SMS in every activation country'],nonneg:'The Human Routing Map must be accessible via SMS in every country where the challenge activates. The person with no data can still find help in real time. Always.',become:'The infrastructure that made lift a billion hands literally true.',partners:'Telcos · Mobile carriers · SMS platforms · Device ecosystems · Handset partners'}
+};
+
+// ── SPA ROUTING ────────────────────────────────────────────────────────
+function nav(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg=document.getElementById('page-'+id);
+  if(pg){pg.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});initReveal()}
+}
+
+// ── MOBILE NAV ─────────────────────────────────────────────────────────
+const ham=document.getElementById('ham'),drawer=document.getElementById('drawer');
+ham.addEventListener('click',()=>{
+  const open=drawer.classList.toggle('open');
+  ham.setAttribute('aria-expanded',open);
+  const spans=ham.querySelectorAll('span');
+  if(open){spans[0].style.cssText='transform:rotate(45deg) translate(4px,4px)';spans[1].style.opacity='0';spans[2].style.cssText='transform:rotate(-45deg) translate(4px,-4px)'}
+  else{spans.forEach(s=>s.style.cssText='')}
+});
+function closeMenu(){drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');ham.querySelectorAll('span').forEach(s=>s.style.cssText='')}
+
+// ── SCROLL REVEAL ──────────────────────────────────────────────────────
+function initReveal(){
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.05});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+initReveal();
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('solid',window.scrollY>40)},{passive:true});
+
+// ── EXPAND PANELS — shared builder ─────────────────────────────────────
+function buildRolePanel(key,closeId,gridId){
+  const r=ROLES[key];if(!r)return'';
+  const steps=['Make the Butterfly Sign.','Complete the Hero Act — revealed live from Miami on April 30.','Share the message: I see you. I care. You are not alone.','Tag three people. Give them 24 hours. That is how it moves.'];
+  return`<div class="ep-inner">
+    <div>
+      <button class="ep-close" onclick="${closeId}()" aria-label="Close">✕</button>
+      <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:10px">${r.icon} ${r.name} · ${r.roleTag}</div>
+      <h3 class="ep-h">${r.name} <em>carries the movement.</em></h3>
+      <p class="ep-body">${r.why}</p>
+    </div>
+    <div>
+      <div class="ask-box">
+        <span class="ask-lbl">The Ask</span>
+        <div class="ask-h">One video.<br>Three nominations.</div>
+        <div class="ask-body">${r.ask}</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">${steps.map((s,i)=>`<div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:rgba(9,13,13,.65)"><span style="font-family:var(--serif);font-size:22px;font-weight:300;color:rgba(9,13,13,.4);width:24px;flex-shrink:0;line-height:1.2">${i+1}</span><span>${s}</span></div>`).join('')}</div>
+        <button class="ask-btn" onclick="nav('challenge');return false;">Join the Challenge →</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAlliancePanel(key,closeId){
+  const d=ALLIANCES[key];if(!d)return'';
+  return`<div class="ep-inner">
+    <div>
+      <button class="ep-close" onclick="${closeId}()" aria-label="Close">✕</button>
+      <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">${d.ref}</div>
+      <h3 class="ep-h" style="color:var(--ink)">${d.name}</h3>
+      <p style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink-50);margin-bottom:14px;line-height:1.4">${d.tagline}</p>
+      <p class="ep-body">${d.why}</p>
+      <div style="font-size:10.5px;color:var(--ink-30);line-height:1.7;margin-bottom:12px">${d.partners}</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-30);margin-bottom:12px">What alliance partners do</div>
+      <div class="ep-what">${d.what.map(w=>`<div class="ep-wi">${w}</div>`).join('')}</div>
+      <div class="ep-nonneg"><strong>Non-negotiable:</strong> ${d.nonneg}</div>
+      <div class="ep-become">${d.become}</div>
+      <div class="ep-ctas">
+        <button class="btn-primary" onclick="nav('alliances');return false;">Become a Founding Partner</button>
+        <button class="btn-secondary" onclick="nav('alliances');return false;">Full Brief →</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── CULTURE CARD TOGGLES ───────────────────────────────────────────────
+let openCultureHomeKey=null,openCulturePageKey=null;
+
+function toggleCultureCard(card,key,ctx='home'){
+  const isHome=ctx!=='page';
+  const gridId=isHome?'culture-home-grid':'culture-page-grid';
+  const panelId=isHome?'expand-culture-home':'expand-culture-page';
+  const closeId=isHome?'closeCultureHome':'closeCulturePage';
+  const keyVar=isHome?'openCultureHomeKey':'openCulturePageKey';
+  const currentKey=isHome?openCultureHomeKey:openCulturePageKey;
+  const panel=document.getElementById(panelId);
+  if(currentKey===key){panel.style.display='none';card.classList.remove('open');if(isHome)openCultureHomeKey=null;else openCulturePageKey=null;return}
+  document.querySelectorAll(`#${gridId} .culture-card.open`).forEach(c=>c.classList.remove('open'));
+  card.classList.add('open');
+  if(isHome)openCultureHomeKey=key;else openCulturePageKey=key;
+  panel.innerHTML=buildRolePanel(key,closeId,gridId);
+  panel.style.display='block';
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function closeCultureHome(){const p=document.getElementById('expand-culture-home');p.style.display='none';document.querySelectorAll('#culture-home-grid .culture-card.open').forEach(c=>c.classList.remove('open'));openCultureHomeKey=null}
+function closeCulturePage(){const p=document.getElementById('expand-culture-page');p.style.display='none';document.querySelectorAll('#culture-page-grid .culture-card.open').forEach(c=>c.classList.remove('open'));openCulturePageKey=null}
+
+// ── ALLIANCE CARD TOGGLES ──────────────────────────────────────────────
+let openAllianceHomeKey=null,openAlliancePageKey=null;
+
+function toggleAllianceCard(card,key,ctx='home'){
+  const isHome=ctx!=='page';
+  const gridId=isHome?'alliance-home-grid':'alliance-page-grid';
+  const panelId=isHome?'expand-alliance-home':'expand-alliance-page';
+  const closeId=isHome?'closeAllianceHome':'closeAlliancePage';
+  const currentKey=isHome?openAllianceHomeKey:openAlliancePageKey;
+  const panel=document.getElementById(panelId);
+  if(currentKey===key){panel.style.display='none';card.classList.remove('open');if(isHome)openAllianceHomeKey=null;else openAlliancePageKey=null;return}
+  document.querySelectorAll(`#${gridId} .alliance-card.open`).forEach(c=>c.classList.remove('open'));
+  card.classList.add('open');
+  if(isHome)openAllianceHomeKey=key;else openAlliancePageKey=key;
+  panel.innerHTML=buildAlliancePanel(key,closeId);
+  panel.style.display='block';
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function closeAllianceHome(){
+  const p=document.getElementById('expand-alliance-home');
+  if(p){p.style.display='none';}
+  document.querySelectorAll('#alliance-home-grid .alliance-card.open').forEach(c=>c.classList.remove('open'));
+  openAllianceHomeKey=null;
+}
+function closeAlliancePage(){
+  const p=document.getElementById('expand-alliance-page');
+  if(p){p.style.display='none';}
+  document.querySelectorAll('#alliance-page-grid .alliance-card.open').forEach(c=>c.classList.remove('open'));
+  openAlliancePageKey=null;
+}
+</script>
+</body>
+</html>
